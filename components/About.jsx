@@ -1,0 +1,37 @@
+import React from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import AboutImg from "../public/vince1.png";
+import '../src/app/globals.css';
+
+const About = () => {
+  return (
+    <div className="w-full md:h-screen p-2 flex items-center py-16">
+      <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8">
+        <div className="col-span-2">
+          <p className="py-4 uppercase text-xl tracking-widest text-[#3e37ff]">
+            About
+          </p>
+          <h2 className="py-4 uppercase text-xl tracking-widest">Who I am</h2>
+          <p className="py-2">
+            I am an analytical, innovative, and motivated professional in web
+            development. Throughout my limited career, I have gained experience
+            in customer service, team leadership, and organizational
+            effectiveness in dynamic and demanding environments. I excel at
+            developing strategies and implementing streamlined operations to
+            enhance efficiency.Overall, I am a dedicated professional who is
+            driven by a passion for web development. My qualifications and
+            experiences have equipped me with the necessary skills to excel in
+            this field, and I am committed to continuous learning and growth to
+            stay at the forefront of industry trends.
+          </p>
+          <div className="w-full h-auto m-auto shadow-xl rounded-xl flex items-center p-4 hover:scale-105 ease-in duration-300 grid-cols-6">
+            <img className="rounded-xl" src={AboutImg} alt = '/' />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default About;
