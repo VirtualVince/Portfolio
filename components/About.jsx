@@ -1,12 +1,12 @@
 import React from "react";
 import Image from 'next/image';
 import Link from 'next/link';
-import AboutImg from "../public/vince1.png";
+import AboutImg from "../public/assets/vince1.png";
 import '../src/app/globals.css';
 
 const About = () => {
   return (
-    <div className="w-full md:h-screen p-2 flex items-center py-16">
+    <div id = "about" className="w-full md:h-screen p-2 flex items-center py-16">
       <div className="max-w-[1240px] m-auto md:grid grid-cols-3 gap-8">
         <div className="col-span-2">
           <p className="py-4 uppercase text-xl tracking-widest text-[#3e37ff]">
@@ -25,12 +25,12 @@ const About = () => {
             this field, and I am committed to continuous learning and growth to
             stay at the forefront of industry trends.
           </p>
+        </div>
           <div className="w-full h-auto m-auto shadow-xl rounded-xl flex items-center p-4 hover:scale-105 ease-in duration-300 grid-cols-6">
             <img className="rounded-xl" src={AboutImg} alt = '/' />
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
