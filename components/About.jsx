@@ -19,7 +19,7 @@ const About = () => {
             in customer service, team leadership, and organizational
             effectiveness in dynamic and demanding environments. I excel at
             developing strategies and implementing streamlined operations to
-            enhance efficiency.Overall, I am a dedicated professional who is
+            enhance efficiency. Overall, I am a dedicated professional who is
             driven by a passion for web development. My qualifications and
             experiences have equipped me with the necessary skills to excel in
             this field, and I am committed to continuous learning and growth to
