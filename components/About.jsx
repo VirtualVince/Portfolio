@@ -15,7 +15,7 @@ const About = () => {
           <h2 className="py-4 uppercase text-xl tracking-widest">Who I am</h2>
           <p className="py-2">
             I am an analytical, innovative, and motivated professional in web
-            development. Throughout my limited career, I have gained experience
+            development. Throughout my career, I have gained experience
             in customer service, team leadership, and organizational
             effectiveness in dynamic and demanding environments. I excel at
             developing strategies and implementing streamlined operations to
@@ -27,7 +27,7 @@ const About = () => {
           </p>
         </div>
           <div className="w-full h-auto m-auto shadow-xl rounded-xl flex items-center p-4 hover:scale-105 ease-in duration-300 grid-cols-6">
-            <img className="rounded-xl" src={AboutImg} alt = '/' />
+            <Image className="rounded-xl" src={AboutImg} alt = '/' />
           </div>
         </div>
       </div>
