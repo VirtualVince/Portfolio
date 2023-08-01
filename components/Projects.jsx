@@ -2,10 +2,6 @@ import React from "react";
 import ProjectItem from "./ProjectItem";
 import Logo from "../public/assets/Logo.png"
 
-<li4 className="ml-10 text-sm uppercaase hover:border-b">
-<Link href="/#showcase"> Projects </Link>
-</li4>
-
 const Projects = () => {
   return (
     <div id='projects' className='w-full'>
