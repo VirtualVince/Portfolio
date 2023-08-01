@@ -33,11 +33,11 @@ const About = () => {
           times and smoother navigation. To give the website a polished and 
           stylish look, I leveraged Tailwind CSS, a cutting-edge design system 
           that allows for quick and efficient customization. Additionally, I 
-          incorporated TypeScript, a type-checking language, to ensure the 
+          incorporated TypeScript, a type checking language, to ensure the 
           website&apos; code is more robust, reliable, and less prone to errors. 
           These technologies not only enhance the website&apos; performance but also 
           make it easier for future maintenance and expansion. As a developer, 
-          I'm adept at utilizing these tools to build efficient, user-friendly, 
+          I&apos;m adept at utilizing these tools to build efficient, user-friendly, 
           and visually striking websites, making me a valuable asset to any employer 
           looking to create a strong online presence.
           </p>
