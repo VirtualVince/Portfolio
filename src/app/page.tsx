@@ -3,18 +3,18 @@ import About from "../../components/About";
 import Main from "../../components/Main";
 import Skills from "../../components/Skills";
 import Contact from "../../components/Contact";
-import Projects from "../../components/Projects"; 
-import Head from 'next/head'
-import '../app/globals.css';
+import Projects from "../../components/Projects";
+import Head from "next/head";
+import "../app/globals.css";
 
 export default function Home() {
   return (
     <div>
       <Head>
-      <link rel="icon" href="../../public/assets/Logo.png" />
+        <link rel="icon" href="../../public/assets/Logo.png" />
       </Head>
       <Navbar />
-      <Main /> 
+      <Main />
       <About />
       <Skills />
       <Contact />
