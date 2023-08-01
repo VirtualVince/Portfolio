@@ -4,7 +4,7 @@ import logo from "../public/assets/Logo.png";
 
 const Navbar = () => {
   return (
-    <div className="fixed w-full h-20 shadow-xl z-[100]">
+    <div className="fixed w-full h-20 bg-[#ffffff] z-[100]">
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <ul>
           <li1 className="ml-10 text-sm uppercaase hover:border-b">
@@ -16,9 +16,9 @@ const Navbar = () => {
           <li3 className="ml-10 text-sm uppercaase hover:border-b">
             <Link href="/#skills"> Skills </Link>
           </li3>
-          <li4 className="ml-10 text-sm uppercaase hover:border-b">
+          <li5 className="ml-10 text-sm uppercaase hover:border-b">
             <Link href="/#contact"> Contact </Link>
-          </li4>
+          </li5>
         </ul>
       </div>
     </div>
