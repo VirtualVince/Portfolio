@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <link rel="icon" href="../../public/assets/Logo.png" />
+        <link rel="icon" href="./favicon.png" />
       </Head>
       <Navbar />
       <Main />

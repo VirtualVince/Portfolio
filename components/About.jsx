@@ -23,24 +23,18 @@ const About = () => {
             a passion for web development. My qualifications and experiences
             have equipped me with the necessary skills to excel in this field,
             and I am committed to continuous learning and growth to stay at the
-            forefront of industry trends.
-          </p>
-          <h2 className="py-4 uppercase text-xl tracking-widest">
-            What I&apos;ve Built?
-          </h2>
-          <p className="py-2">
-            I recently developed this website using some powerful technologies
-            to create a seamless and visually appealing online experience. I
-            used NextJS, which is a modern web framework that ensures faster
-            loading times and smoother navigation. To give the website a
-            polished and stylish look, I leveraged Tailwind CSS, a cutting-edge
-            design system that allows for quick and efficient customization.
-            Additionally, I incorporated TypeScript, a type checking language,
-            to ensure the website&apos;s code is more robust, reliable, and less
-            prone to errors. These technologies not only enhance the
-            website&apos;s performance but also make it easier for future
-            maintenance and expansion. As a developer, I&apos;m adept at
-            utilizing these tools to build efficient, user-friendly, and
+            forefront of industry trends.I recently developed this website using
+            some powerful technologies to create a seamless and visually
+            appealing online experience. I used NextJS, which is a modern web
+            framework that ensures faster loading times and smoother navigation.
+            To give the website a polished and stylish look, I leveraged
+            Tailwind CSS, a cutting-edge design system that allows for quick and
+            efficient customization. Additionally, I incorporated TypeScript, a
+            type checking language, to ensure the website&apos;s code is more
+            robust, reliable, and less prone to errors. These technologies not
+            only enhance the website&apos;s performance but also make it easier
+            for future maintenance and expansion. As a developer, I&apos;m adept
+            at utilizing these tools to build efficient, user-friendly, and
             visually striking websites, making me a valuable asset to any
             employer looking to create a strong online presence.
           </p>
