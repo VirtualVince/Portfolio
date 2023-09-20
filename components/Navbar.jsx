@@ -15,6 +15,9 @@ const Navbar = () => {
           <li3 className="ml-10 text-sm uppercaase hover:border-b">
             <Link href="/#skills"> Skills </Link>
           </li3>
+          <li4 className="ml-10 text-sm uppercaase hover:border-b">
+            <Link href="/#contact"> Projects </Link>
+          </li4>
           <li5 className="ml-10 text-sm uppercaase hover:border-b">
             <Link href="/#contact"> Contact </Link>
           </li5>
