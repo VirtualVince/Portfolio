@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
+
 const Navbar = () => {
   return (
     <div className="fixed w-full h-20 bg-[#ffffff] z-[100]">
