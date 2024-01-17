@@ -1,11 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import { AiOutlineMail } from 'react-icons/ai';
-import { AiFillInstagram } from 'react-icons/ai';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
-import { FaGithub, FaLinkedinIn, } from 'react-icons/fa';
-
-
+import { AiOutlineMail } from "react-icons/ai";
+import { AiFillInstagram } from "react-icons/ai";
+import { BsFillPersonLinesFill } from "react-icons/bs";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const Main = () => {
   return (
@@ -18,7 +16,7 @@ const Main = () => {
           <h1 className="py-4 text-[#000000] ">
             Hi, I&#39;m <span className="text-[#3e37ff]"> Vince</span>
           </h1>
-          <h1 className="py-2 text-[#000000] ">A Full Stack Developer</h1>
+          <h1 className="py-2 text-[#000000] ">A Developer</h1>
           <p className="py-4 text-[#000000]  sm:max-w-[70%] m-auto">
             I’m focused on building responsive front-end web applications
             integrating back-end technologies.
@@ -26,7 +24,7 @@ const Main = () => {
           <div className="flex items -center justify-between max-w-[330px] m-auto py-4">
             <a href="https://www.linkedin.com/in/vincente-sequeira-1824b4245/">
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in-duration-300">
-                <FaLinkedinIn/>
+                <FaLinkedinIn />
               </div>
             </a>
             <a href="https://www.instagram.com/thevirtualvince/ ">
