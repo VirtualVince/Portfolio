@@ -4,6 +4,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaTwitch } from "react-icons/fa6";
 
 const Main = () => {
   return (
@@ -27,9 +28,9 @@ const Main = () => {
                 <FaLinkedinIn />
               </div>
             </a>
-            <a href="https://www.instagram.com/thevirtualvince/ ">
+            <a href="https://www.twitch.tv/c0d3x7747">
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in-duration-300">
-                <AiFillInstagram />
+                <FaTwitch />
               </div>
             </a>
             <a href="https://github.com/VirtualVince  ">

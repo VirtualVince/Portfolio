@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 
-
 const Navbar = () => {
   return (
     <div className="fixed w-full h-20 bg-[#ffffff] z-[100]">
@@ -17,7 +16,7 @@ const Navbar = () => {
             <Link href="/#skills"> Skills </Link>
           </li3>
           <li4 className="ml-10 text-sm uppercaase hover:border-b">
-            <Link href="/#contact"> Projects </Link>
+            <Link href="/#projects"> Projects </Link>
           </li4>
           <li5 className="ml-10 text-sm uppercaase hover:border-b">
             <Link href="/#contact"> Contact </Link>
