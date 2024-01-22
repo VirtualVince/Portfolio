@@ -2,7 +2,7 @@ import React from "react";
 import ProjectItem from "./ProjectItem";
 import Logo from "../public/assets/Logo.png";
 import AutoLogo from "../public/projects/logo1.png";
-import ZelhiLogo from "../public/projects/logo.png"
+import ZelhiLogo from "../public/projects/logo.png";
 
 const Projects = () => {
   return (
@@ -16,25 +16,13 @@ const Projects = () => {
           <ProjectItem
             title="Auto Connect"
             backgroundImg={AutoLogo}
-            projectUrl="/AutoConnect"
+            projectUrl=""
             tech="TypeScript"
           />
           <ProjectItem
             title="Zelhi Automotive"
             backgroundImg={ZelhiLogo}
-            projectUrl="/crypto"
-            tech="Next JS"
-          />
-          <ProjectItem
-            title="Spotify Clone"
-            backgroundImg={Logo}
-            projectUrl="/netflix"
-            tech="Next JS"
-          />
-          <ProjectItem
-            title="Discord UI"
-            backgroundImg={Logo}
-            projectUrl="/twitch"
+            projectUrl=""
             tech="Next JS"
           />
         </div>
