@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Loader from "../loader/";
 
 const Navbar = () => {
   return (
@@ -22,6 +23,15 @@ const Navbar = () => {
             <Link href="/#contact"> Contact </Link>
           </li5>
         </ul>
+        <div class="loader">
+          <div class="loader-square"></div>
+          <div class="loader-square"></div>
+          <div class="loader-square"></div>
+          <div class="loader-square"></div>
+          <div class="loader-square"></div>
+          <div class="loader-square"></div>
+          <div class="loader-square"></div>
+        </div>
       </div>
     </div>
   );
