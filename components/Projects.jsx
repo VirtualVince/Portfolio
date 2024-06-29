@@ -1,8 +1,9 @@
 import React from "react";
 import ProjectItem from "./ProjectItem";
 import Logo from "../public/assets/Logo.png";
-import AutoLogo from "../public/projects/logo1.png";
-import ZelhiLogo from "../public/projects/logo.png";
+import AutoLogo from "../public/projects/autoconnectLogo.png";
+import YaybiLogo from "../public/projects/yaybiLogo.jpg";
+import ZelhiLogo from "../public/projects/zeliLogo.png";
 
 const Projects = () => {
   return (
@@ -15,14 +16,14 @@ const Projects = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <ProjectItem
             title="Auto Connect"
-            backgroundImg={AutoLogo}
-            projectUrl=""
-            tech="TypeScript"
+            backgroundImg={YaybiLogo}
+            projectUrl="https://myyaybiway.me/"
+            tech="Shopify API"
           />
           <ProjectItem
             title="Zelhi Automotive"
             backgroundImg={ZelhiLogo}
-            projectUrl=""
+            projectUrl="https://zeli-automotive.vercel.app/"
             tech="Next JS"
           />
         </div>
