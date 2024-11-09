@@ -24,7 +24,7 @@ const Contact = () => {
               </div>
               <div>
                 <h2 className="py-2">Virtual Vince</h2>
-                <p>Front-End Developer</p>
+                <p>Software Engineer</p>
                 <p className="py-4">
                   I am available for freelance or part-time positions. Contact
                   me and let&apos;s talk.

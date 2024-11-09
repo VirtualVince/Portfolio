@@ -75,7 +75,7 @@ const resume = () => {
             <span className="px-2">|</span>SQL
             <span className="px-2">|</span>Shopify API
             <span className="px-2">|</span>Tailwind
-            <span className="px-2">|</span> RESTAPI
+            <span className="px-2">|</span> Java
           </p>
         </div>
 
@@ -140,7 +140,7 @@ const resume = () => {
         {/* Personal Experience */}
         <div className="py-6">
           <p className="italic">
-            <span className="font-bold italic">Auto Connect</span>
+            <span className="font-bold italic">YAYBI</span>
             <span className="px-2">|</span> Shopify API
           </p>
           <p className="py-1 italic">
