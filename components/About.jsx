@@ -47,10 +47,10 @@ const About = () => {
               <span className="text-[#3e37ff]"> resume </span>
             </Link>{" "}
             or my{" "}
-            <a href="/#projects">
+            <Link href="/#projects">
               {" "}
               <span className="text-[#3e37ff]"> projects </span>
-            </a>
+            </Link>
             .
           </p>
         </div>
