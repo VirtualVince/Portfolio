@@ -3,6 +3,33 @@ import Head from "next/head";
 import "../app/globals.css";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
+const skills = [
+  {
+    category: "Programming Languages",
+    items: ["JavaScript", "TypeScript", "Python", "SQL", "Java", "C#", "Go"],
+  },
+  {
+    category: "Web Development",
+    items: ["Next.js", "React", "ASP.NET", "Express.js"],
+  },
+  {
+    category: "Frontend Technologies",
+    items: ["HTML", "CSS", "Tailwind CSS", "Shopify API"],
+  },
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "SQLite", "Google Sheets API"],
+  },
+  {
+    category: "Tools & Frameworks",
+    items: ["Node.js", "REST APIs", "Neovim", "Git", "GitHub", "Vercel"],
+  },
+  {
+    category: "Cloud & DevOps",
+    items: ["AWS", "Azure", "Google Cloud Platform"],
+  },
+];
+
 const resume = () => {
   return (
     <>
@@ -62,21 +89,28 @@ const resume = () => {
         </p>
 
         {/* Skills */}
+
         <div className="text-center py-4">
           <h5 className="text-center underline text-[18px] py-2">Skills</h5>
-          <p className="py-2">
-            <span className="font-bold">Technical Skills</span>
-            <span className="px-2">|</span>Front-End Web Developer
-            <span className="px-2">|</span> HTML
-            <span className="px-2">|</span>CSS
-            <span className="px-2">|</span>Javascript
-            <span className="px-2">|</span>React
-            <span className="px-2">|</span>Next JS
-            <span className="px-2">|</span>SQL
-            <span className="px-2">|</span>Shopify API
-            <span className="px-2">|</span>Tailwind
-            <span className="px-2">|</span> Java
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[900px] mx-auto">
+            {skills.map((skillGroup, index) => (
+              <div key={index} className="bg-white p-4 rounded-lg shadow-md">
+                <h6 className="font-bold text-[16px] mb-2 text-[#5651e5]">
+                  {skillGroup.category}
+                </h6>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {skillGroup.items.map((skill, skillIndex) => (
+                    <span
+                      key={skillIndex}
+                      className="bg-gray-100 rounded-full px-3 py-1 text-sm text-gray-700"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <h5 className="text-center underline text-[18px] py-4">
@@ -161,6 +195,36 @@ const resume = () => {
             <li>
               Implemented custom solutions for inventory management and customer
               engagement, significantly improving operational efficiency.
+            </li>
+          </ul>
+
+          <p className="italic">
+            <span className="font-bold">Exploding Paint Brushes</span>
+            <span className="px-2">|</span> LAMP Stack
+          </p>
+          <p className="py-1 italic">
+            Project URL:{" "}
+            <a
+              href="https://brit.explodingpaintbrushes.com/"
+              className="underline text-blue-600 hover:text-blue-800 transition duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              brit.explodingpaintbrushes.com
+            </a>
+          </p>
+          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
+            <li>
+              Developed a dynamic e-commerce platform using the LAMP stack
+              (Linux, Apache, MySQL, PHP) to ensure stability and performance.
+            </li>
+            <li>
+              Built custom backend solutions to improve inventory management and
+              customer engagement, streamlining business operations.
+            </li>
+            <li>
+              Optimized MySQL queries and server configurations to enhance site
+              speed and scalability.
             </li>
           </ul>
 

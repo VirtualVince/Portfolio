@@ -4,6 +4,7 @@ import Logo from "../public/assets/Logo.png";
 import AutoLogo from "../public/projects/autoconnectLogo.png";
 import YaybiLogo from "../public/projects/yaybiLogo.jpg";
 import ZelhiLogo from "../public/projects/zeliLogo.png";
+import PaintLogo from "../public/projects/ExplodingPaintBrushes.png";
 
 const Projects = () => {
   return (
@@ -15,13 +16,19 @@ const Projects = () => {
         <h2 className="py-4">What I&apos;ve Built</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <ProjectItem
-            title="Auto Connect"
+            title="My YAYBI Way"
             backgroundImg={YaybiLogo}
             projectUrl="https://myyaybiway.me/"
             tech="Shopify API"
           />
           <ProjectItem
-            title="Zelhi Automotive"
+            title="Exploding Paint Brushes"
+            backgroundImg={PaintLogo}
+            projectUrl="https://brit.explodingpaintbrushes.com/"
+            tech="LAMP Stack"
+          />
+          <ProjectItem
+            title="Zeli Automotive"
             backgroundImg={ZelhiLogo}
             projectUrl="https://zeli-automotive.vercel.app/"
             tech="Next JS"

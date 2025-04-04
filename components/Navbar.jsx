@@ -19,21 +19,9 @@ const Navbar = () => {
             <Link href="/#projects"> Projects </Link>
           </li4>
           <li5 className="ml-10 text-sm uppercaase hover:border-b">
-            <Link href="/resume"> Resume </Link>
-          </li5>
-          <li6 className="ml-10 text-sm uppercaase hover:border-b">
             <Link href="/#contact"> Contact </Link>
-          </li6>
+          </li5>
         </ul>
-        <div class="loader">
-          <div class="loader-square"></div>
-          <div class="loader-square"></div>
-          <div class="loader-square"></div>
-          <div class="loader-square"></div>
-          <div class="loader-square"></div>
-          <div class="loader-square"></div>
-          <div class="loader-square"></div>
-        </div>
       </div>
     </div>
   );
