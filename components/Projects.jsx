@@ -27,12 +27,6 @@ const Projects = () => {
             projectUrl="https://brit.explodingpaintbrushes.com/"
             tech="LAMP Stack"
           />
-          <ProjectItem
-            title="Zeli Automotive"
-            backgroundImg={ZelhiLogo}
-            projectUrl="https://zeli-automotive.vercel.app/"
-            tech="Next JS"
-          />
         </div>
       </div>
     </div>
