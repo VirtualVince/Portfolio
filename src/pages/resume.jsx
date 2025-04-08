@@ -252,6 +252,72 @@ const resume = () => {
             </li>
           </ul>
         </div>
+
+        <h5 className="text-center underline text-[18px] py-4">
+          Educational Experience
+        </h5>
+
+        {/* Education Section */}
+
+        <div className="py-6">
+          <p className="italic">
+            <span className="font-bold">George Brown College, Toronto</span>
+            <span className="px-2">|</span>Advanced Diploma, Computer
+            Programming and Analysis (Online)
+            <span className="px-2">|</span>
+            <span className="italic">2022 - Present</span>
+          </p>
+          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
+            <li>
+              Currently in Semester 4 of a 6-semester program with focus on
+              full-stack development, software testing, and modern development
+              methodologies
+            </li>
+            <li>
+              Developed proficiency in Java, JavaScript, web development (HTML,
+              CSS, React), database management, and system analysis
+            </li>
+            <li>
+              Completed key technical courses including Data Structures &
+              Algorithms, Web Application Development, Database Management, and
+              Object-Oriented Programming
+            </li>
+            <li>
+              Actively engaged in collaborative projects using Agile
+              methodologies and DevOps practices
+            </li>
+            <li>
+              Set to specialize in Mobile Application Development, Applied
+              Machine Learning, and Full Stack Development in upcoming semesters
+            </li>
+          </ul>
+
+          <p className="pt-5 italic">
+            <span className="font-bold">Relevant Coursework:</span>
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-7 py-2">
+            <div>
+              <p className="font-bold">Programming & Development</p>
+              <ul className="list-disc list-outside pl-5">
+                <li>Object-Oriented Programming</li>
+                <li>Data Structures and Algorithms</li>
+                <li>Advanced Web Programming</li>
+                <li>Application Development using Java</li>
+                <li>Full-Stack Development</li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-bold">Software Engineering</p>
+              <ul className="list-disc list-outside pl-5">
+                <li>Software Quality Assurance</li>
+                <li>System Analysis, Design & Testing</li>
+                <li>Agile Software Development</li>
+                <li>Open Source Development</li>
+                <li>Linux Essentials</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
