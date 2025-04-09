@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "Your Name - Portfolio",
-  description: "Your Portfolio Description",
+  title: " Virtual Vince- Portfolio",
+  description: "Portfolio Website For Virtual Vince",
   icons: {
     icon: [
       {
