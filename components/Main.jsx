@@ -28,7 +28,7 @@ const Main = () => {
                 <FaLinkedinIn />
               </div>
             </a>
-            <a href="https://www.twitch.tv/c0d3x7747">
+            <a href="https://www.twitch.tv/virtual__vince">
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in-duration-300">
                 <FaTwitch />
               </div>
