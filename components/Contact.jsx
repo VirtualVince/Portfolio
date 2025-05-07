@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useEffect } from "react";
 import ContactImg from "../public/assets/Contact.webp";
 
 const Contact = () => {
@@ -97,6 +98,30 @@ const Contact = () => {
       </div>
     </div>
   );
+};
+
+const Calendly = () => {
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.href = "https://assets.calendly.com/assets/external/widget.css";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    script.onload = () => {
+      window.Calendly?.initBadgeWidget({
+        url: "https://calendly.com/virtualvince2020/30min",
+        text: "Schedule a meet",
+        color: "#0069ff",
+        textColor: "#ffffff",
+      });
+    };
+    document.body.appendChild(script);
+  }, []);
+
+  return null;
 };
 
 export default Contact;
