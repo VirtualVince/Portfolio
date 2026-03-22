@@ -19,7 +19,6 @@ import Express from "../public/skills/expressjs.png";
 import Shopify from "../public/skills/shopify.png";
 import PostgreSQL from "../public/skills/postgresql.svg";
 import SQLite from "../public/skills/sqlite.svg";
-import GoogleSheets from "../public/skills/googlesheets.svg";
 import RestAPI from "../public/skills/restapi.png";
 import Neovim from "../public/skills/neovim.svg";
 import Git from "../public/skills/git.svg";
@@ -27,114 +26,149 @@ import Vercel from "../public/skills/vercel.svg";
 import AWS from "../public/skills/amazonwebservices.svg";
 import Azure from "../public/skills/azure.png";
 import GCP from "../public/skills/googlecloud.svg";
-
+ 
+// Accent colors per category (left border + heading)
+const CATEGORY_COLORS = {
+  "Languages":       "#3e37ff",
+  "Frontend":        "#7c3aed",
+  "Frameworks":      "#0ea5e9",
+  "Databases":       "#059669",
+  "Tools":           "#d97706",
+  "Cloud & DevOps":  "#db2777",
+};
+ 
 const skillCategories = [
   {
-    title: "Programming Languages",
+    title: "Languages",
     skills: [
-      { name: "JavaScript", image: Javascript },
-      { name: "TypeScript", image: TypeScript },
-      { name: "Python", image: Python },
-      { name: "SQL", image: SQL },
-      { name: "Java", image: Java },
-      { name: "C#", image: CSharp },
-      { name: "Go", image: Go },
+      { name: "JavaScript",  image: Javascript },
+      { name: "TypeScript",  image: TypeScript },
+      { name: "Python",      image: Python },
+      { name: "Java",        image: Java },
+      { name: "C#",          image: CSharp },
+      { name: "Go",          image: Go },
+      { name: "SQL",         image: SQL },
+      { name: "Lua",         image: null },
+      { name: "Liquid",      image: Shopify },
     ],
   },
   {
-    title: "Web Development",
+    title: "Frontend",
     skills: [
-      { name: "Next.js", image: NextJS },
-      { name: "React", image: ReactImg },
-      { name: "ASP.NET", image: AspNet },
-      { name: "Express.js", image: Express },
-    ],
-  },
-  {
-    title: "Frontend Technologies",
-    skills: [
-      { name: "HTML", image: Html },
-      { name: "CSS", image: Css },
+      { name: "HTML",         image: Html },
+      { name: "CSS",          image: Css },
+      { name: "React",        image: ReactImg },
+      { name: "Next.js",      image: NextJS },
       { name: "Tailwind CSS", image: Tailwind },
-      { name: "Shopify API", image: Shopify },
+    ],
+  },
+  {
+    title: "Frameworks",
+    skills: [
+      { name: "Node.js",      image: Node },
+      { name: "Express.js",   image: Express },
+      { name: "ASP.NET",      image: AspNet },
+      { name: "Hydrogen / Remix", image: Shopify },
     ],
   },
   {
     title: "Databases",
     skills: [
-      { name: "PostgreSQL", image: PostgreSQL },
-      { name: "SQLite", image: SQLite },
-      { name: "Google Sheets API", image: GoogleSheets },
+      { name: "PostgreSQL",   image: PostgreSQL },
+      { name: "SQLite",       image: SQLite },
+      { name: "LuaSQL",       image: null },
+      { name: "MySQL",        image: null },
     ],
   },
   {
-    title: "Tools & Frameworks",
+    title: "Tools",
     skills: [
-      { name: "Node.js", image: Node },
-      { name: "REST APIs", image: RestAPI },
-      { name: "Neovim", image: Neovim },
-      { name: "Git", image: Git },
-      { name: "GitHub", image: Github },
-      { name: "Vercel", image: Vercel },
+      { name: "Git",          image: Git },
+      { name: "GitHub",       image: Github },
+      { name: "REST APIs",    image: RestAPI },
+      { name: "Vercel",       image: Vercel },
+      { name: "Neovim",       image: Neovim },
     ],
   },
   {
     title: "Cloud & DevOps",
     skills: [
-      { name: "AWS", image: AWS },
-      { name: "Azure", image: Azure },
-      { name: "Google Cloud Platform", image: GCP },
+      { name: "AWS",          image: AWS },
+      { name: "Azure",        image: Azure },
+      { name: "Google Cloud", image: GCP },
     ],
   },
 ];
-
+ 
+const SkillChip = ({ name, image, accent }) => (
+  <div
+    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white hover:scale-105 ease-in duration-200 cursor-default"
+    style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.05)" }}
+  >
+    {image ? (
+      <Image src={image} width={22} height={22} alt={name} style={{ objectFit: "contain" }} />
+    ) : (
+      <span
+        className="flex items-center justify-center text-[10px] font-bold rounded"
+        style={{
+          width: 22,
+          height: 22,
+          background: accent + "18",
+          color: accent,
+          flexShrink: 0,
+        }}
+      >
+        {name.slice(0, 2).toUpperCase()}
+      </span>
+    )}
+    <span className="text-sm text-gray-700 whitespace-nowrap">{name}</span>
+  </div>
+);
+ 
 const Skills = () => {
   return (
-    <div id="skills" className="w-full lg:min-h-screen p-2 py-16">
-      <div className="max-w-[1240px] mx-auto flex flex-col justify-center">
+    <div id="skills" className="w-full py-16 px-2">
+      <div className="max-w-[1240px] mx-auto">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Skills
         </p>
-        <h2 className="py-4">What I Can Do</h2>
-
-        {skillCategories.map((category, catIndex) => (
-          <div key={catIndex} className="mb-6">
-            <h3 className="text-[18px] font-semibold mb-3 text-[#5651e5]">
-              {category.title}
-            </h3>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2">
-              {category.skills.map((skill, skillIndex) => (
-                <div
-                  key={skillIndex}
-                  className="p-2 shadow-md rounded-lg hover:scale-105 ease-in duration-300 bg-white"
+        <h2 className="py-4">What I Work With</h2>
+ 
+        <div className="grid md:grid-cols-2 gap-5 mt-2">
+          {skillCategories.map((category) => {
+            const accent = CATEGORY_COLORS[category.title] || "#5651e5";
+            return (
+              <div
+                key={category.title}
+                className="rounded-xl bg-gray-50 p-5"
+                style={{
+                  borderLeft: `4px solid ${accent}`,
+                  boxShadow: "0 1px 6px rgba(0,0,0,0.06)",
+                }}
+              >
+                <h3
+                  className="text-sm font-semibold uppercase tracking-widest mb-4"
+                  style={{ color: accent }}
                 >
-                  <div className="flex flex-col items-center justify-center">
-                    {skill.image ? (
-                      <div className="m-auto">
-                        <Image
-                          src={skill.image}
-                          width="40"
-                          height="40"
-                          alt={skill.name}
-                        />
-                      </div>
-                    ) : (
-                      <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
-                        <p className="text-[8px] text-gray-500">No img</p>
-                      </div>
-                    )}
-                    <div className="flex flex-col items-center justify-center mt-1">
-                      <h3 className="text-xs text-center">{skill.name}</h3>
-                    </div>
-                  </div>
+                  {category.title}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <SkillChip
+                      key={skill.name}
+                      name={skill.name}
+                      image={skill.image}
+                      accent={accent}
+                    />
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-        ))}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
 };
-
+ 
 export default Skills;
