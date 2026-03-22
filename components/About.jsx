@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AboutImg from "../public/assets/vince1.png";
 import "../src/app/globals.css";
-
+// need to update personal branding 
 const About = () => {
   return (
     <div id="about" className="w-full md:h-screen p-2 flex items-center">
