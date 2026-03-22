@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
- 
+
 const ProjectItem = ({ title, backgroundImg, bgColor, tech, projectUrl }) => {
   return (
-    <div className='relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff]'>
+    <div className='relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 dark:shadow-gray-800 rounded-xl group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff]'>
       {backgroundImg ? (
         <Image
           className='rounded-xl group-hover:opacity-10'
@@ -14,9 +14,12 @@ const ProjectItem = ({ title, backgroundImg, bgColor, tech, projectUrl }) => {
       ) : (
         <div
           className='rounded-xl group-hover:opacity-10 w-full flex items-center justify-center'
-          style={{ background: bgColor || '#e8e8e8', minHeight: '220px' }}
+          style={{ background: bgColor || '#1a1a1a', minHeight: '220px' }}
         >
-          <p className='text-sm font-medium px-4 text-center' style={{ color: bgColor === '#1a1a2e' ? '#9b9bba' : '#555' }}>
+          <p
+            className='text-sm font-medium px-4 text-center'
+            style={{ color: bgColor === '#1a1a2e' ? '#9b9bba' : '#888' }}
+          >
             {title}
           </p>
         </div>
@@ -33,5 +36,5 @@ const ProjectItem = ({ title, backgroundImg, bgColor, tech, projectUrl }) => {
     </div>
   )
 }
- 
+
 export default ProjectItem

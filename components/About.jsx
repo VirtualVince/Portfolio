@@ -12,50 +12,46 @@ const About = () => {
           <p className="py-4 uppercase text-xl tracking-widest text-[#3e37ff]">
             About
           </p>
-          <h2 className="py-4 uppercase text-xl tracking-widest">Who I am?</h2>
-          <p className="py-2">
-            I am an analytical, innovative, and motivated professional in web
-            development. Throughout my career, I have gained experience in
-            customer service, team leadership, and organizational effectiveness
-            in dynamic and demanding environments. I excel at developing
-            strategies and implementing streamlined operations to enhance
-            efficiency. Overall, I am a dedicated professional who is driven by
-            a passion for web development. My qualifications and experiences
-            have equipped me with the necessary skills to excel in this field,
-            and I am committed to continuous learning and growth to stay at the
-            forefront of industry trends.
-            <br />
-            <br />I recently developed this website using some powerful
-            technologies to create a seamless and visually appealing online
-            experience. I used NextJS, which is a modern web framework that
-            ensures faster loading times and smoother navigation. To give the
-            website a polished and stylish look, I leveraged Tailwind CSS, a
-            cutting-edge design system that allows for quick and efficient
-            customization. Additionally, I incorporated TypeScript, a type
-            checking language, to ensure the website&apos;s code is more robust,
-            reliable, and less prone to errors. These technologies not only
-            enhance the website&apos;s performance but also make it easier for
-            future maintenance and expansion. As a developer, I&apos;m adept at
-            utilizing these tools to build efficient, user-friendly, and
-            visually striking websites, making me a valuable asset to any
-            employer looking to create a strong online presence.
-            <br />
-            <br />
+          <h2 className="py-4 uppercase text-xl tracking-widest text-black dark:text-white">
+            Who I am
+          </h2>
+          <p className="py-2 text-gray-700 dark:text-gray-300">
+            I&apos;m a freelance web developer and the founder of{" "}
+            <span className="font-semibold text-black dark:text-white">Virtual Vince</span>, a development
+            practice focused on helping small businesses and organizations build
+            a strong online presence. My client work spans a range of industries
+            from community arts organizations and professional education
+            platforms to health and wellness practices and automotive businesses.
+          </p>
+          <p className="py-2 text-gray-700 dark:text-gray-300">
+            I specialize in building responsive, production-ready websites and
+            apps using modern tooling including Next.js, React, Tailwind CSS,
+            and TypeScript, with backend experience across Node.js, ASP.NET,
+            Express, and cloud platforms like AWS, Azure, and GCP. I manage
+            everything from initial scoping and design through to deployment and
+            ongoing maintenance.
+          </p>
+          <p className="py-2 text-gray-700 dark:text-gray-300">
+            Alongside my client work, I&apos;m completing an Advanced Diploma in
+            Computer Programming and Analysis at George Brown College, where I&apos;m
+            currently building a roguelike game headed to Steam as my capstone
+            project. I bring the same professional standards to academic work
+            that I apply to every client engagement.
+          </p>
+          <p className="py-2 text-gray-700 dark:text-gray-300">
             Check out my{" "}
             <Link href="/resume">
-              {" "}
-              <span className="text-[#3e37ff]"> resume </span>
+              <span className="text-[#3e37ff] hover:underline"> resume </span>
             </Link>{" "}
-            or my{" "}
+            or browse my{" "}
             <Link href="/#projects">
-              {" "}
-              <span className="text-[#3e37ff]"> projects </span>
+              <span className="text-[#3e37ff] hover:underline"> client work </span>
             </Link>
             .
           </p>
         </div>
-        <div className="w-full h-auto m-auto shadow-xl rounded-xl flex items-center p-4 hover:scale-105 ease-in duration-300 grid-cols-6">
-          <Image className="rounded-xl" src={AboutImg} alt="/" />
+        <div className="w-full h-auto m-auto shadow-xl shadow-gray-400 dark:shadow-gray-800 rounded-xl flex items-center p-4 hover:scale-105 ease-in duration-300">
+          <Image className="rounded-xl" src={AboutImg} alt="Vince" />
         </div>
       </div>
     </div>

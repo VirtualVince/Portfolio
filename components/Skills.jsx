@@ -26,17 +26,16 @@ import Vercel from "../public/skills/vercel.svg";
 import AWS from "../public/skills/amazonwebservices.svg";
 import Azure from "../public/skills/azure.png";
 import GCP from "../public/skills/googlecloud.svg";
- 
-// Accent colors per category (left border + heading)
+
 const CATEGORY_COLORS = {
-  "Languages":       "#3e37ff",
-  "Frontend":        "#7c3aed",
-  "Frameworks":      "#0ea5e9",
-  "Databases":       "#059669",
-  "Tools":           "#d97706",
-  "Cloud & DevOps":  "#db2777",
+  "Languages":      "#3e37ff",
+  "Frontend":       "#7c3aed",
+  "Frameworks":     "#0ea5e9",
+  "Databases":      "#059669",
+  "Tools":          "#d97706",
+  "Cloud & DevOps": "#db2777",
 };
- 
+
 const skillCategories = [
   {
     title: "Languages",
@@ -65,29 +64,29 @@ const skillCategories = [
   {
     title: "Frameworks",
     skills: [
-      { name: "Node.js",      image: Node },
-      { name: "Express.js",   image: Express },
-      { name: "ASP.NET",      image: AspNet },
+      { name: "Node.js",          image: Node },
+      { name: "Express.js",       image: Express },
+      { name: "ASP.NET",          image: AspNet },
       { name: "Hydrogen / Remix", image: Shopify },
     ],
   },
   {
     title: "Databases",
     skills: [
-      { name: "PostgreSQL",   image: PostgreSQL },
-      { name: "SQLite",       image: SQLite },
-      { name: "LuaSQL",       image: null },
-      { name: "MySQL",        image: null },
+      { name: "PostgreSQL", image: PostgreSQL },
+      { name: "SQLite",     image: SQLite },
+      { name: "LuaSQL",     image: null },
+      { name: "MySQL",      image: null },
     ],
   },
   {
     title: "Tools",
     skills: [
-      { name: "Git",          image: Git },
-      { name: "GitHub",       image: Github },
-      { name: "REST APIs",    image: RestAPI },
-      { name: "Vercel",       image: Vercel },
-      { name: "Neovim",       image: Neovim },
+      { name: "Git",       image: Git },
+      { name: "GitHub",    image: Github },
+      { name: "REST APIs", image: RestAPI },
+      { name: "Vercel",    image: Vercel },
+      { name: "Neovim",    image: Neovim },
     ],
   },
   {
@@ -99,10 +98,10 @@ const skillCategories = [
     ],
   },
 ];
- 
+
 const SkillChip = ({ name, image, accent }) => (
   <div
-    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white hover:scale-105 ease-in duration-200 cursor-default"
+    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white dark:bg-[#222222] hover:scale-105 ease-in duration-200 cursor-default"
     style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.05)" }}
   >
     {image ? (
@@ -113,7 +112,7 @@ const SkillChip = ({ name, image, accent }) => (
         style={{
           width: 22,
           height: 22,
-          background: accent + "18",
+          background: accent + "22",
           color: accent,
           flexShrink: 0,
         }}
@@ -121,10 +120,10 @@ const SkillChip = ({ name, image, accent }) => (
         {name.slice(0, 2).toUpperCase()}
       </span>
     )}
-    <span className="text-sm text-gray-700 whitespace-nowrap">{name}</span>
+    <span className="text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">{name}</span>
   </div>
 );
- 
+
 const Skills = () => {
   return (
     <div id="skills" className="w-full py-16 px-2">
@@ -132,15 +131,15 @@ const Skills = () => {
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Skills
         </p>
-        <h2 className="py-4">What I Work With</h2>
- 
+        <h2 className="py-4 text-black dark:text-white">What I Work With</h2>
+
         <div className="grid md:grid-cols-2 gap-5 mt-2">
           {skillCategories.map((category) => {
             const accent = CATEGORY_COLORS[category.title] || "#5651e5";
             return (
               <div
                 key={category.title}
-                className="rounded-xl bg-gray-50 p-5"
+                className="rounded-xl bg-gray-50 dark:bg-[#1a1a1a] p-5"
                 style={{
                   borderLeft: `4px solid ${accent}`,
                   boxShadow: "0 1px 6px rgba(0,0,0,0.06)",
@@ -170,5 +169,5 @@ const Skills = () => {
     </div>
   );
 };
- 
+
 export default Skills;

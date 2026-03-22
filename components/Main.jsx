@@ -1,8 +1,7 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
-import { AiFillInstagram } from "react-icons/ai";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FaTwitch } from "react-icons/fa6";
 
@@ -11,35 +10,36 @@ const Main = () => {
     <div id="home" className="w-full h-screen text-center">
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div>
-          <p className="uppercase text-sm tracking-widest text-[#000000]">
-            LET&#39;S BUILD SOMETHING TOGETHER
+          <p className="uppercase text-sm tracking-widest text-black dark:text-gray-400">
+            Freelance Web Developer &amp; Founder of Virtual Vince
           </p>
-          <h1 className="py-4 text-[#000000] ">
+          <h1 className="py-4 text-black dark:text-white">
             Hi, I&#39;m <span className="text-[#3e37ff]"> Vince</span>
           </h1>
-          <h1 className="py-2 text-[#000000] ">A Software Engineer</h1>
-          <p className="py-4 text-[#000000]  sm:max-w-[70%] m-auto">
-            I’m focused on building responsive front-end web applications
-            integrating back-end technologies.
+          <h1 className="py-2 text-black dark:text-white">A Software Engineer</h1>
+          <p className="py-4 text-gray-600 dark:text-gray-400 sm:max-w-[70%] m-auto">
+            I build production websites and apps for real clients
+            from community organizations and ecommerce stores to health
+            practices and automotive businesses.
           </p>
-          <div className="flex items -center justify-between max-w-[330px] m-auto py-4">
+          <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
             <a href="https://www.linkedin.com/in/vincente-sequeira-1824b4245/">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in-duration-300">
+              <div className="rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-800 p-6 cursor-pointer hover:scale-110 ease-in duration-300 bg-white dark:bg-[#1a1a1a] text-black dark:text-white">
                 <FaLinkedinIn />
               </div>
             </a>
             <a href="https://www.twitch.tv/virtual__vince">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in-duration-300">
+              <div className="rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-800 p-6 cursor-pointer hover:scale-110 ease-in duration-300 bg-white dark:bg-[#1a1a1a] text-black dark:text-white">
                 <FaTwitch />
               </div>
             </a>
-            <a href="https://github.com/VirtualVince  ">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in-duration-300">
+            <a href="https://github.com/VirtualVince">
+              <div className="rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-800 p-6 cursor-pointer hover:scale-110 ease-in duration-300 bg-white dark:bg-[#1a1a1a] text-black dark:text-white">
                 <FaGithub />
               </div>
             </a>
-            <Link href="/#contact ">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in-duration-300">
+            <Link href="/#contact">
+              <div className="rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-800 p-6 cursor-pointer hover:scale-110 ease-in duration-300 bg-white dark:bg-[#1a1a1a] text-black dark:text-white">
                 <AiOutlineMail />
               </div>
             </Link>
