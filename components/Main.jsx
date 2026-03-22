@@ -11,14 +11,14 @@ const Main = () => {
       <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
         <div>
           <p className="uppercase text-sm tracking-widest text-black dark:text-gray-400">
-            Freelance Web Developer &amp; Founder of Virtual Vince
+            Freelance Software Engineer &amp; Founder of Virtual Vince
           </p>
           <h1 className="py-4 text-black dark:text-white">
             Hi, I&#39;m <span className="text-[#3e37ff]"> Vince</span>
           </h1>
           <h1 className="py-2 text-black dark:text-white">A Software Engineer</h1>
           <p className="py-4 text-gray-600 dark:text-gray-400 sm:max-w-[70%] m-auto">
-            I build production websites and web apps for real clients —
+            I build production websites and web apps for real clients
             from community organizations and e-commerce stores to health
             practices and automotive businesses.
           </p>
