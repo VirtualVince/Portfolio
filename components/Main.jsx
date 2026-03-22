@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { FaTwitch } from "react-icons/fa6";
+import { FaYoutube } from "react-icons/fa";
 
 const Main = () => {
   return (
@@ -18,8 +18,8 @@ const Main = () => {
           </h1>
           <h1 className="py-2 text-black dark:text-white">A Software Engineer</h1>
           <p className="py-4 text-gray-600 dark:text-gray-400 sm:max-w-[70%] m-auto">
-            I build production websites and apps for real clients
-            from community organizations and ecommerce stores to health
+            I build production websites and web apps for real clients —
+            from community organizations and e-commerce stores to health
             practices and automotive businesses.
           </p>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
@@ -28,9 +28,9 @@ const Main = () => {
                 <FaLinkedinIn />
               </div>
             </a>
-            <a href="https://www.twitch.tv/virtual__vince">
+            <a href="https://www.youtube.com/@vssincorporated">
               <div className="rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-800 p-6 cursor-pointer hover:scale-110 ease-in duration-300 bg-white dark:bg-[#1a1a1a] text-black dark:text-white">
-                <FaTwitch />
+                <FaYoutube />
               </div>
             </a>
             <a href="https://github.com/VirtualVince">

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { FaTwitch } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+
 
 const Contact = () => {
   useEffect(() => {
@@ -29,7 +29,7 @@ const Contact = () => {
             <div className="shadow-xl shadow-gray-400 dark:shadow-gray-800 rounded-xl p-6 bg-white dark:bg-[#1a1a1a]">
               <h3 className="text-xl font-semibold mb-1 text-black dark:text-white">Virtual Vince</h3>
               <p className="text-[#5651e5] text-sm uppercase tracking-widest mb-4">
-                Freelance Web Developer
+                Freelance Software Engineer
               </p>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
                 Looking to build or improve your online presence? Book a free
@@ -80,13 +80,13 @@ const Contact = () => {
                   GitHub
                 </a>
                 <a
-                  href="https://www.twitch.tv/virtual__vince"
+                  href="https://www.youtube.com/@vssincorporated"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-[#5651e5] dark:hover:text-[#7c78ff] transition-colors duration-200"
                 >
-                  <FaTwitch size={18} />
-                  Twitch
+                  <FaYoutube size={18} />
+                  YouTube
                 </a>
               </div>
             </div>
