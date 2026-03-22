@@ -1,127 +1,110 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { useEffect } from "react";
-import ContactImg from "../public/assets/Contact.webp";
+"use client";
+import React, { useEffect } from "react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaTwitch } from "react-icons/fa6";
 
 const Contact = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
-    <div id="contact" className="w-full lg:h-screen">
-      <div className="max-w-[1240px] m-auto px-2 py-16 w-full ">
+    <div id="contact" className="w-full py-16 px-2">
+      <div className="max-w-[1240px] m-auto w-full">
         <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Contact
         </p>
-        <h2 className="py-4">Get In Touch</h2>
-        <div className="grid lg:grid-cols-5 gap-8">
-          {/* left */}
-          <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4">
-            <div className="lg:p-4 h-full ">
-              <div>
-                <Image
-                  className="rounded-xl hover:scale-105 ease-in duration-300"
-                  src={ContactImg}
-                  alt="/"
-                />
-              </div>
-              <div>
-                <h2 className="py-2">Virtual Vince</h2>
-                <p>Software Engineer</p>
-                <p className="py-4">
-                  I am available for freelance or part-time positions. Contact
-                  me and let&apos;s talk.
-                </p>
-              </div>
+        <h2 className="py-4">Let&apos;s Work Together</h2>
+
+        <div className="grid lg:grid-cols-3 gap-8 items-start">
+
+          {/* Left — intro */}
+          <div className="flex flex-col gap-6">
+            <div className="shadow-xl shadow-gray-400 rounded-xl p-6">
+              <h3 className="text-xl font-semibold mb-1">Virtual Vince</h3>
+              <p className="text-[#5651e5] text-sm uppercase tracking-widest mb-4">
+                Freelance Software Engineer
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Looking to build or improve your online presence? Book a free
+                30-minute call and let&apos;s talk through what you need.
+              </p>
+              <ul className="text-sm text-gray-500 flex flex-col gap-2">
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-green-400 inline-block"></span>
+                  Available for new clients
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#5651e5] inline-block"></span>
+                  Websites &amp; web apps
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#5651e5] inline-block"></span>
+                  Shopify &amp; WordPress builds
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#5651e5] inline-block"></span>
+                  Server setup &amp; deployment
+                </li>
+              </ul>
             </div>
-          </div>
-          {/* right */}
-          <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
-            <div className="p-4">
-              <form
-                action="https://getform.io/f/6de84e87-4645-48a8-a7d0-950f587133be"
-                method="POST"
-                encType="multipart/form-data"
-              >
-                <div className="grid md:grid-cols-2 gap-4 w-full py-2">
-                  <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">Name</label>
-                    <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300 text-[#000000]"
-                      type="text"
-                      name="name"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">
-                      Phone Number
-                    </label>
-                    <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300 text-[#000000]"
-                      type="text"
-                      name="phone"
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Email</label>
-                  <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300 text-[#000000]"
-                    type="email"
-                    name="email"
-                  />
-                </div>
-                <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Subject</label>
-                  <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300 text-[#000000]"
-                    type="text"
-                    name="subject"
-                  />
-                </div>
-                <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Message</label>
-                  <textarea
-                    className="border-2 rounded-lg p-3 border-gray-300 text-[#000000]"
-                    rows="10"
-                    name="message"
-                  ></textarea>
-                </div>
-                <button
-                  className="w-full p-4 text-gray-100 mt-4"
-                  action="https://getform.io/f/6de84e87-4645-48a8-a7d0-950f587133be"
+
+            {/* Socials */}
+            <div className="shadow-xl shadow-gray-400 rounded-xl p-6">
+              <p className="text-sm uppercase tracking-widest text-gray-400 mb-4">
+                Find me online
+              </p>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="https://www.linkedin.com/in/vincente-sequeira-1824b4245/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm text-gray-700 hover:text-[#5651e5] transition-colors duration-200"
                 >
-                  Send Message
-                </button>
-              </form>
+                  <FaLinkedinIn size={18} />
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/VirtualVince"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm text-gray-700 hover:text-[#5651e5] transition-colors duration-200"
+                >
+                  <FaGithub size={18} />
+                  GitHub
+                </a>
+                <a
+                  href="https://www.twitch.tv/virtual__vince"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm text-gray-700 hover:text-[#5651e5] transition-colors duration-200"
+                >
+                  <FaTwitch size={18} />
+                  Twitch
+                </a>
+              </div>
             </div>
           </div>
+
+          {/* Right — Calendly inline embed */}
+          <div className="lg:col-span-2 shadow-xl shadow-gray-400 rounded-xl overflow-hidden">
+            <div
+              className="calendly-inline-widget w-full"
+              data-url="https://calendly.com/virtualvince2020/30min?hide_gdpr_banner=1&primary_color=3e37ff"
+              style={{ minWidth: "320px", height: "700px" }}
+            />
+          </div>
+
         </div>
       </div>
     </div>
   );
-};
-
-const Calendly = () => {
-  useEffect(() => {
-    const link = document.createElement("link");
-    link.href = "https://assets.calendly.com/assets/external/widget.css";
-    link.rel = "stylesheet";
-    document.head.appendChild(link);
-
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    script.onload = () => {
-      window.Calendly?.initBadgeWidget({
-        url: "https://calendly.com/virtualvince2020/30min",
-        text: "Schedule a meet",
-        color: "#0069ff",
-        textColor: "#ffffff",
-      });
-    };
-    document.body.appendChild(script);
-  }, []);
-
-  return null;
 };
 
 export default Contact;

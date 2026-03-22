@@ -1,14 +1,17 @@
 import React from "react";
 import ProjectItem from "./ProjectItem";
-import YaybiLogo from "../public/projects/yaybiLogo.jpg";
+import YaybiLogo from "../public/projects/YaybiLogo.png";
 import PaintLogo from "../public/projects/ExplodingPaintBrushes.png";
+import EGCCLogo from "../public/projects/EGCClogo.png";
+import K2ELogo from "../public/projects/k2e.png";
+import RadiantRootsLogo from "../public/projects/radiantroots.png";
 
 const projects = [
   {
     title: "My YAYBI Way",
     backgroundImg: YaybiLogo,
     projectUrl: "https://myyaybiway.me/",
-    tech: "Nextjs + Liquid + Hydrogen/Remix",
+    tech: "Liquid / Hydrogen + Remix",
   },
   {
     title: "Exploding Paint Brushes",
@@ -18,19 +21,19 @@ const projects = [
   },
   {
     title: "Creative Collective",
-    bgColor: "#f0e9ff",
+    backgroundImg: EGCCLogo,
     projectUrl: "https://creativecollectiveonline.com/",
     tech: "LAMP Stack",
   },
   {
     title: "K2E Canada",
-    bgColor: "#e8f4fd",
+    backgroundImg: K2ELogo,
     projectUrl: "https://www.k2e.ca/",
-    tech: "Liquid + Hydrogen/Remix",
+    tech: "Liquid / Hydrogen + Remix",
   },
   {
     title: "Radiant Roots Vitality",
-    bgColor: "#e8f5ee",
+    backgroundImg: RadiantRootsLogo,
     projectUrl: "https://radiantrootsvitality.com/",
     tech: "Nextjs",
   },
@@ -55,9 +58,6 @@ const Projects = () => {
             <ProjectItem key={index} {...project} />
           ))}
         </div>
-        <p className="text-sm text-gray-400 mt-6">
-          * Project screenshots coming soon — hover each card to visit the live site.
-        </p>
       </div>
     </div>
   );
