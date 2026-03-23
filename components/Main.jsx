@@ -23,7 +23,7 @@ const Main = () => {
             practices and automotive businesses.
           </p>
           <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
-            <a href="https://www.linkedin.com/in/vincente-sequeira-1824b4245/">
+            <a href="https://www.linkedin.com/in/vince-sequeira-1824b4245/">
               <div className="rounded-full shadow-lg shadow-gray-400 dark:shadow-gray-800 p-6 cursor-pointer hover:scale-110 ease-in duration-300 bg-white dark:bg-[#1a1a1a] text-black dark:text-white">
                 <FaLinkedinIn />
               </div>
