@@ -5,7 +5,7 @@ import PaintLogo from "../public/projects/ExplodingPaintBrushes.png";
 import EGCCLogo from "../public/projects/EGCClogo.png";
 import K2ELogo from "../public/projects/k2e.png";
 import RadiantRootsLogo from "../public/projects/radiantroots.png";
-
+import OrpheusLogo from "../public/projects/orpheus_icon.svg"
 const projects = [
   {
     title: "My YAYBI Way",
@@ -14,15 +14,15 @@ const projects = [
     tech: "Liquid / Hydrogen + Remix",
   },
   {
-    title: "Exploding Paint Brushes",
-    backgroundImg: PaintLogo,
-    projectUrl: "https://brit.explodingpaintbrushes.com/",
-    tech: "LAMP Stack",
-  },
-  {
     title: "Creative Collective",
     backgroundImg: EGCCLogo,
     projectUrl: "https://creativecollectiveonline.com/",
+    tech: "LAMP Stack",
+  },
+  {
+    title: "Orpheus",
+    backgroundImg: OrpheusLogo,
+    projectUrl: "https://app.orpheus.cx/",
     tech: "LAMP Stack",
   },
   {
@@ -37,11 +37,11 @@ const projects = [
     projectUrl: "https://radiantrootsvitality.com/",
     tech: "Nextjs",
   },
-  {
-    title: "Rogue Paddle",
-    bgColor: "#1a1a2e",
-    projectUrl: "https://github.com/da-shalev/rogue-paddle",
-    tech: "Love2D · Lua · LuaSQL / SQLite",
+    {
+    title: "My YAYBI Way",
+    backgroundImg: YaybiLogo,
+    projectUrl: "https://myyaybiway.me/",
+    tech: "Liquid / Hydrogen + Remix",
   },
 ];
 
