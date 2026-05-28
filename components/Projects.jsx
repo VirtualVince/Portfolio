@@ -23,7 +23,7 @@ const projects = [
     title: "Orpheus",
     backgroundImg: OrpheusLogo,
     projectUrl: "https://app.orpheus.cx/",
-    tech: "LAMP Stack",
+    tech: "Typescript, Convex, Rust",
   },
   {
     title: "K2E Canada",
