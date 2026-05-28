@@ -3,7 +3,7 @@ import ProjectItem from "./ProjectItem";
 import YaybiLogo from "../public/projects/YaybiLogo.png";
 import PaintLogo from "../public/projects/ExplodingPaintBrushes.png";
 import EGCCLogo from "../public/projects/EGCClogo.png";
-import K2ELogo from "../public/projects/k2e.png";
+import K2ELogo from "../public/projects/K2-Big_1.avif";
 import RadiantRootsLogo from "../public/projects/radiantroots.png";
 import OrpheusLogo from "../public/projects/orpheus_icon.svg"
 const projects = [
@@ -23,7 +23,7 @@ const projects = [
     title: "Orpheus",
     backgroundImg: OrpheusLogo,
     projectUrl: "https://app.orpheus.cx/",
-    tech: "Typescript, Convex, Rust",
+    tech: "TypeScript, Convex, Rust",
   },
   {
     title: "K2E Canada",
@@ -35,7 +35,7 @@ const projects = [
     title: "Radiant Roots Vitality",
     backgroundImg: RadiantRootsLogo,
     projectUrl: "https://radiantrootsvitality.com/",
-    tech: "Nextjs",
+    tech: "Nextjs, TypeScript, Tailwind",
   },
     {
     title: "My YAYBI Way",
