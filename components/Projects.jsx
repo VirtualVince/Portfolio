@@ -6,12 +6,14 @@ import EGCCLogo from "../public/projects/EGCClogo.png";
 import K2ELogo from "../public/projects/K2-Big_1.avif";
 import RadiantRootsLogo from "../public/projects/radiantroots.png";
 import OrpheusLogo from "../public/projects/orpheus_icon.svg"
+import ChironLogo from ".././public/projects/Chiron.png"
+
 const projects = [
   {
-    title: "My YAYBI Way",
-    backgroundImg: YaybiLogo,
-    projectUrl: "https://myyaybiway.me/",
-    tech: "Liquid / Hydrogen + Remix",
+    title: "ChironAI",
+    backgroundImg: ChironLogo,
+    projectUrl: "https://chironai.vercel.app/",
+    tech: "Nextjs, TypeScript, Tailwind",
   },
   {
     title: "Creative Collective",
