@@ -3,54 +3,223 @@ import Head from "next/head";
 import "../app/globals.css";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
-const skills = [
+// Keep this file in sync with ~/job/resume/master.md, which generates the PDF.
+// Everything below is data. Edit the arrays, not the markup.
+
+const SUMMARY =
+  "Software engineer with production experience across backend services and the Linux infrastructure they run on. I run a freelance development business, co-founded a developer tool written in Rust and TypeScript, and administer the multi-tenant server my client work is deployed to.";
+
+const EXPERIENCE = [
   {
-    category: "Programming Languages",
-    items: ["JavaScript", "TypeScript", "Python", "SQL", "Java", "C#", "Go"],
+    org: "Orpheus",
+    role: "Backend Engineer, Co-founder",
+    dates: "January 2026 – Present",
+    location: "Remote",
+    blurb:
+      "Version control for digital audio workstation projects. Git handles these badly because DAW files are large binaries with no stable identity inside them, so a one note change looks like a whole file rewrite.",
+    points: [
+      "Own the Convex backend schema and the track mutations, including server side validation of everything written to the database.",
+      "Contributed to the design for diffing DAW projects, grounded in measurement rather than assumption. A single note edit localizes to 1 of roughly 1,800 binary events and a 143 to 167 byte patch, while opaque plugin blobs account for up to 76 percent of file bytes.",
+      "Contributed to the architecture of flparse, a Rust crate that parses FL Studio's binary event stream and re-encodes it byte exactly across every test fixture.",
+      "Four contributor monorepo, 376 commits. TypeScript, Rust, Convex, Bun, Turborepo, Nix.",
+    ],
   },
   {
-    category: "Web Development",
-    items: ["Next.js", "React", "ASP.NET", "Express.js"],
+    org: "Virtual Vince",
+    role: "Founder, Software Engineer",
+    dates: "February 2024 – Present",
+    location: "Stratford, ON",
+    blurb:
+      "Independent development business building and operating production systems for clients in health, arts, education and e-commerce.",
+    points: [
+      "Provision and administer a multi tenant Ubuntu Server VPS end to end, from a bare install through HestiaCP, user accounts, DNS, firewall rules and my own backup routines. It hosts several independent sites.",
+      "Wrote 11 WordPress plugins in PHP that create pages, navigation, layouts, forms and content programmatically, putting site structure under version control instead of in a sequence of manual admin actions.",
+      "Built an audit log plugin with its own database table, a schema version key for migrations, configurable account exclusions, and exact diff capture for every content edit alongside plugin and publishing events.",
+      "Ship and maintain Next.js, TypeScript and Tailwind applications, including one client on a monthly hosting and maintenance retainer.",
+      "Run ChironAI, an AI enablement service covering team training, agent setup and business process automation.",
+    ],
   },
   {
-    category: "Frontend Technologies",
-    items: ["HTML", "CSS", "Tailwind CSS", "Shopify API"],
+    org: "Daniel Digital",
+    role: "Developer, Contract",
+    dates: "June 2021 – October 2023",
+    location: "Canada",
+    blurb:
+      "Development for a digital marketing consultancy serving clients across North America. Part time and intermittent alongside school, contracted per project.",
+    points: [
+      "Built client websites and web applications using HTML, CSS, Python, React and Next.js.",
+      "Handled server deployments and releases for client projects.",
+      "Worked directly with clients on requirements and change requests.",
+    ],
   },
   {
-    category: "Databases",
-    items: ["PostgreSQL", "SQLite", "Google Sheets API"],
-  },
-  {
-    category: "Tools & Frameworks",
-    items: ["Node.js", "REST APIs", "Neovim", "Git", "GitHub", "Vercel"],
-  },
-  {
-    category: "Cloud & DevOps",
-    items: ["AWS", "Azure", "Google Cloud Platform"],
+    org: "Telus",
+    role: "Sales Representative",
+    dates: "October 2023 – January 2024",
+    location: "Stratford, ON",
+    blurb: null,
+    points: [
+      "Consultative sales of connectivity and hardware products, translating technical product differences for non technical customers.",
+    ],
   },
 ];
 
-const resume = () => {
+const CLIENT_WORK = [
+  {
+    name: "Elizabeth Gardens Creative Collective",
+    stack: "Ubuntu Server, HestiaCP, PHP, WordPress, MySQL",
+    url: "https://creativecollectiveonline.com/",
+    note: "Community arts organization on a multi tenant VPS I provision and administer end to end. 11 custom plugins including an audit log capturing the exact diff of every content change.",
+  },
+  {
+    name: "Exploding Paint Brushes",
+    stack: "LAMP, WordPress, MySQL",
+    url: "https://brit.explodingpaintbrushes.com/",
+    note: "A separate tenant on the same VPS, managed independently. Custom backend work and MySQL query tuning on a LAMP stack.",
+  },
+  {
+    name: "Radiant Roots Vitality",
+    stack: "Next.js, TypeScript, Tailwind",
+    url: "https://www.radiantrootsvitality.com/",
+    note: "Health practice site with Google Maps and a Fullscript storefront handoff. Hosted and maintained on a monthly retainer.",
+  },
+  {
+    name: "My YAYBI Way",
+    stack: "Next.js, TypeScript, Tailwind, Shopify Storefront",
+    url: "https://myyaybiway.me/",
+    note: "Custom front end pulling live products, images and metadata from a Shopify storefront.",
+  },
+  {
+    name: "K2E Canada",
+    stack: "Shopify, Liquid",
+    url: "https://www.k2e.ca/",
+    note: "Professional education storefront with custom Liquid.",
+  },
+];
+
+const PROJECTS = [
+  {
+    name: "terraform-k3s-aws",
+    stack: "Terraform, Kubernetes, AWS, Go",
+    url: "https://github.com/VirtualVince/terraform-k3s-aws",
+    note: "Single node Kubernetes cluster provisioned end to end with Terraform. VPC, security group and EC2 node running k3s via cloud-init, with a Go service behind an ingress. SSH access fails closed rather than defaulting to 0.0.0.0/0.",
+  },
+  {
+    name: "Distributed Systems Practice",
+    stack: "Go",
+    url: "https://github.com/VirtualVince/Interview",
+    note: "Six primitives with full test suites run under the race detector. Raft leader election, a Bitcask style log structured key value store with CRC and crash recovery, a consistent hash ring, vector clocks, a bounded worker pool, and a token bucket rate limiter.",
+  },
+  {
+    name: "CIFAR-10 Regularization Study",
+    stack: "Python, TensorFlow",
+    url: "https://github.com/VirtualVince/cifar10-regularization-study",
+    note: "A controlled four model comparison isolating what dropout, L2 weight decay and augmentation each contribute to generalization. An overparameterized 12M parameter dense baseline reaches roughly 45 percent validation accuracy, a three block CNN combining all three exceeds 80.",
+  },
+  {
+    name: "Employee Management System",
+    stack: "Node.js, Apollo GraphQL, MongoDB, Angular",
+    url: "https://github.com/VirtualVince/employee-management-system",
+    note: "Enforces authorization per resolver off a JWT resolved context and returns coded GraphQL errors so clients branch on stable codes rather than message strings.",
+  },
+  {
+    name: "r3builds",
+    stack: "C++, Arduino",
+    url: "https://github.com/VirtualVince/R3Builds",
+    note: "Ten embedded builds covering GPIO and timing, debounce, PWM, UART, ADC, I2C, SPI, a closed sensor to actuator control loop, a finite state machine, and IR protocol decode into actuation.",
+  },
+];
+
+const SKILLS = [
+  {
+    category: "Infrastructure & Operations",
+    items: ["Linux", "Ubuntu Server", "HestiaCP", "DNS", "Firewalls", "Backups", "AWS", "Azure", "GCP", "Vercel"],
+  },
+  {
+    category: "Containers & Orchestration",
+    items: ["Docker", "Kubernetes", "Terraform", "Jenkins", "Kafka", "Keycloak"],
+  },
+  {
+    category: "Languages",
+    items: ["Go", "TypeScript", "JavaScript", "Python", "C++", "C#", "Java", "PHP", "SQL", "Lua"],
+  },
+  {
+    category: "Backend",
+    items: ["Node.js", "Express", "Apollo GraphQL", "ASP.NET", "Convex", "REST"],
+  },
+  {
+    category: "Data",
+    items: ["PostgreSQL", "MongoDB", "MySQL", "SQLite"],
+  },
+  {
+    category: "Embedded",
+    items: ["Arduino", "C for microcontrollers", "I2C", "SPI", "UART"],
+  },
+  {
+    category: "Frontend",
+    items: ["React", "Next.js", "Angular", "Tailwind CSS"],
+  },
+  {
+    category: "Tooling",
+    items: ["Git", "GitHub Actions", "Neovim", "Bun", "Turborepo", "Nix"],
+  },
+];
+
+const Section = ({ title, children }) => (
+  <>
+    <h5 className="text-center underline text-[18px] py-4 text-black dark:text-white">
+      {title}
+    </h5>
+    {children}
+  </>
+);
+
+const LinkedItem = ({ item }) => (
+  <div className="py-3">
+    <p className="italic">
+      <span className="font-bold not-italic text-black dark:text-white">
+        {item.name}
+      </span>
+      <span className="px-2">|</span>
+      <span className="text-gray-600 dark:text-gray-400">{item.stack}</span>
+    </p>
+    <p className="py-1 text-sm">
+      <a
+        href={item.url}
+        target="_blank"
+        rel="noreferrer"
+        className="underline text-[#3e37ff] dark:text-[#8fa6ff] break-all"
+      >
+        {item.url.replace(/^https?:\/\//, "")}
+      </a>
+    </p>
+    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{item.note}</p>
+  </div>
+);
+
+const Resume = () => {
   return (
     <>
       <Head>
-        <title>Vince | Resume</title>
+        <title>Vincente Sequeira | Resume</title>
         <meta
           name="description"
-          content="I’m a front-end web developer specializing in building (and occasionally designing) exceptional digital experiences."
+          content="Vincente Sequeira, software engineer working on backend services and the Linux infrastructure they run on."
         />
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <div className="max-w-[940px] mx-auto p-2 pt-[120px]">
+      <div className="max-w-[940px] mx-auto p-2 pt-[120px] text-black dark:text-white">
         <h2 className="text-center">Resume</h2>
-        <div className="bg-[#d0d4d6] my-4 p-4 w-full flex justify-between items-center">
+
+        <div className="bg-[#d0d4d6] dark:bg-[#1a1a1a] my-4 p-4 w-full flex justify-between items-center rounded">
           <h2 className="text-center">Vincente Sequeira</h2>
           <div className="flex">
             <a
               href="https://www.linkedin.com/in/vincente-sequeira-1824b4245/"
               target="_blank"
               rel="noreferrer"
+              aria-label="LinkedIn"
             >
               <FaLinkedinIn size={20} style={{ marginRight: "1rem" }} />
             </a>
@@ -58,51 +227,88 @@ const resume = () => {
               href="https://github.com/VirtualVince"
               target="_blank"
               rel="noreferrer"
+              aria-label="GitHub"
             >
               <FaGithub size={20} style={{ marginRight: "1rem" }} />
             </a>
           </div>
         </div>
+
         <div className="text-center py-4 text-xl font-bold uppercase tracking-wider">
           <div className="hidden sm:block">
             <p>
-              Proven Leadership <span className="px-1">|</span> Web Development{" "}
-              <span className="px-1">|</span> Complex Problem Solving
+              Backend Systems <span className="px-1">|</span> Linux Infrastructure{" "}
+              <span className="px-1">|</span> Embedded
             </p>
           </div>
           <div className="block sm:hidden">
-            <p>Proven Leadership</p>
-            <p className="py-2">Web Development</p>
-            <p>Complex Problem Solving</p>
+            <p>Backend Systems</p>
+            <p className="py-2">Linux Infrastructure</p>
+            <p>Embedded</p>
           </div>
         </div>
-        <p>
-          Analytical, innovative, and motivated web development professional
-          with experience in customer service, team leadership, and
-          organizational effectiveness in fast-paced and challenging
-          environments. Adept at developing strategies and driving streamlined
-          operations. Diverse analytical skills, team collaboration, and
-          relationship building. Consummate professional, and motivated leader,
-          with solid interpersonal abilities and complex problem-solving skills.
-          Effective and proven track record of critical thinking, idea
-          generation, and optimizing efficiencies.
-        </p>
 
-        {/* Skills */}
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{SUMMARY}</p>
 
-        <div className="text-center py-4">
-          <h5 className="text-center underline text-[18px] py-2">Skills</h5>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[900px] mx-auto">
-            {skills.map((skillGroup, index) => (
-              <div key={index} className="bg-white p-4 rounded-lg shadow-md">
-                <h6 className="font-bold text-[16px] mb-2 text-[#5651e5]">
-                  {skillGroup.category}
+        <Section title="Professional Experience">
+          <div className="py-2">
+            {EXPERIENCE.map((job) => (
+              <div key={job.org} className="py-4">
+                <p className="italic">
+                  <span className="font-bold not-italic text-black dark:text-white">
+                    {job.org}
+                  </span>
+                  <span className="px-2">|</span>
+                  {job.role}
+                  <span className="px-2">|</span>
+                  {job.dates}
+                  <span className="px-2">|</span>
+                  {job.location}
+                </p>
+                {job.blurb && (
+                  <p className="py-1 text-gray-700 dark:text-gray-300">{job.blurb}</p>
+                )}
+                <ul className="list-disc list-outside px-7 py-1 leading-relaxed text-gray-700 dark:text-gray-300">
+                  {job.points.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Client Work">
+          <div className="py-2">
+            {CLIENT_WORK.map((item) => (
+              <LinkedItem key={item.name} item={item} />
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Projects">
+          <div className="py-2">
+            {PROJECTS.map((item) => (
+              <LinkedItem key={item.name} item={item} />
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Skills">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[900px] mx-auto py-2">
+            {SKILLS.map((group) => (
+              <div
+                key={group.category}
+                className="bg-white dark:bg-[#1a1a1a] p-4 rounded-lg shadow-md"
+              >
+                <h6 className="font-bold text-[16px] mb-2 text-[#5651e5] dark:text-[#8fa6ff]">
+                  {group.category}
                 </h6>
                 <div className="flex flex-wrap justify-center gap-2">
-                  {skillGroup.items.map((skill, skillIndex) => (
+                  {group.items.map((skill) => (
                     <span
-                      key={skillIndex}
-                      className="bg-gray-100 rounded-full px-3 py-1 text-sm text-gray-700"
+                      key={skill}
+                      className="bg-gray-100 dark:bg-[#2a2a2a] rounded-full px-3 py-1 text-sm text-gray-700 dark:text-gray-300"
                     >
                       {skill}
                     </span>
@@ -111,216 +317,43 @@ const resume = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Section>
 
-        <h5 className="text-center underline text-[18px] py-4">
-          Professional Experience
-        </h5>
-        {/* Professional Experience */}
-        <div className="py-6">
-          <p className="italic">
-            <span className="font-bold italic">Daniel Digital</span>
-            <span className="px-2">|</span>Junior Developer
-            <span className="px-2">|</span>March 2021 – September 2023
-          </p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-            <li>
-              Utilized programming languages and frameworks such as HTML, CSS,
-              Python, React, and NextJS to develop and maintain web
-              applications.
-            </li>
-            <li>
-              Managed server deployments and client requests, ensuring seamless
-              project execution and delivery.
-            </li>
-          </ul>
-          <p className="italic">
-            <span className="font-bold">TELUS</span>
-            <span className="px-2">|</span>Sales Representative
-            <span className="px-2">|</span>October 2023 - January 2024
-          </p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-            <li>
-              Engaged with customers to understand their needs and provide
-              tailored product recommendations.
-            </li>
-            <li>
-              Achieved sales targets by leveraging strong communication and
-              interpersonal skills.
-            </li>
-          </ul>
-          <p className="italic">
-            <span className="font-bold">Virtual Vince</span>
-            <span className="px-2">|</span>Business Owner/Developer/Sales
-            Representative
-            <span className="px-2">|</span>Ongoing
-          </p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-            <li>
-              Founded and operate a business dedicated to building and enhancing
-              online presences for small businesses.
-            </li>
-            <li>
-              Provided a range of web services including website development,
-              newsletter creation, online stores, and checkout services.
-            </li>
-            <li>
-              Managed all aspects of the business from development to sales,
-              ensuring client satisfaction and business growth.
-            </li>
-          </ul>
-        </div>
+        <Section title="Education">
+          <div className="py-2 pb-10">
+            <p className="italic">
+              <span className="font-bold not-italic text-black dark:text-white">
+                George Brown College, Toronto
+              </span>
+              <span className="px-2">|</span>Advanced Diploma, Computer Programming
+              and Analysis
+              <span className="px-2">|</span>2026
+            </p>
+            <ul className="list-disc list-outside px-7 py-1 leading-relaxed text-gray-700 dark:text-gray-300">
+              <li>Dean&apos;s List, final semester.</li>
+              <li>
+                Coursework included Developer Operations, deploying a containerized
+                application to AWS using Terraform, Kubernetes, Jenkins CI, Kafka and
+                Keycloak.
+              </li>
+              <li>
+                Applied Machine Learning, Full Stack Development, Mobile Application
+                Development, Data Structures and Algorithms, System Analysis and
+                Testing, Linux Essentials.
+              </li>
+            </ul>
 
-        {/* Personal Experience */}
-        <div className="py-6">
-          <p className="italic">
-            <span className="font-bold italic">YAYBI</span>
-            <span className="px-2">|</span> Shopify API
-          </p>
-          <p className="py-1 italic">
-            Project URL:{" "}
-            <a
-              href="https://myyaybiway.me/"
-              className="underline text-blue-600"
-            >
-              https://myyaybiway.me/
-            </a>
-          </p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-            <li>
-              Developed an e-commerce platform for automotive parts leveraging
-              Shopify API, enhancing user experience and streamlining the
-              purchase process.
-            </li>
-            <li>
-              Implemented custom solutions for inventory management and customer
-              engagement, significantly improving operational efficiency.
-            </li>
-          </ul>
-
-          <p className="italic">
-            <span className="font-bold">Exploding Paint Brushes</span>
-            <span className="px-2">|</span> LAMP Stack
-          </p>
-          <p className="py-1 italic">
-            Project URL:{" "}
-            <a
-              href="https://brit.explodingpaintbrushes.com/"
-              className="underline text-blue-600 hover:text-blue-800 transition duration-200"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              brit.explodingpaintbrushes.com
-            </a>
-          </p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-            <li>
-              Developed a dynamic e-commerce platform using the LAMP stack
-              (Linux, Apache, MySQL, PHP) to ensure stability and performance.
-            </li>
-            <li>
-              Built custom backend solutions to improve inventory management and
-              customer engagement, streamlining business operations.
-            </li>
-            <li>
-              Optimized MySQL queries and server configurations to enhance site
-              speed and scalability.
-            </li>
-          </ul>
-
-          <p className="italic">
-            <span className="font-bold italic">Zelhi Automotive</span>
-            <span className="px-2">|</span> Next JS
-          </p>
-          <p className="py-1 italic">
-            Project URL:{" "}
-            <a
-              href="https://zeli-automotive.vercel.app/"
-              className="underline text-blue-600"
-            >
-              https://zeli-automotive.vercel.app/
-            </a>
-          </p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-            <li>
-              Built a modern, responsive website for an automotive business
-              using Next.js, improving site performance and SEO.
-            </li>
-            <li>
-              Integrated dynamic content and server-side rendering features to
-              provide a seamless user experience across various devices.
-            </li>
-          </ul>
-        </div>
-
-        <h5 className="text-center underline text-[18px] py-4">
-          Educational Experience
-        </h5>
-
-        {/* Education Section */}
-
-        <div className="py-6">
-          <p className="italic">
-            <span className="font-bold">George Brown College, Toronto</span>
-            <span className="px-2">|</span>Advanced Diploma, Computer
-            Programming and Analysis (Online)
-            <span className="px-2">|</span>
-            <span className="italic">2022 - Present</span>
-          </p>
-          <ul className="list-disc list-outside px-7 py-1 leading-relaxed">
-            <li>
-              Currently in Semester 4 of a 6-semester program with focus on
-              full-stack development, software testing, and modern development
-              methodologies
-            </li>
-            <li>
-              Developed proficiency in Java, JavaScript, web development (HTML,
-              CSS, React), database management, and system analysis
-            </li>
-            <li>
-              Completed key technical courses including Data Structures &
-              Algorithms, Web Application Development, Database Management, and
-              Object-Oriented Programming
-            </li>
-            <li>
-              Actively engaged in collaborative projects using Agile
-              methodologies and DevOps practices
-            </li>
-            <li>
-              Set to specialize in Mobile Application Development, Applied
-              Machine Learning, and Full Stack Development in upcoming semesters
-            </li>
-          </ul>
-
-          <p className="pt-5 italic">
-            <span className="font-bold">Relevant Coursework:</span>
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-7 py-2">
-            <div>
-              <p className="font-bold">Programming & Development</p>
-              <ul className="list-disc list-outside pl-5">
-                <li>Object-Oriented Programming</li>
-                <li>Data Structures and Algorithms</li>
-                <li>Advanced Web Programming</li>
-                <li>Application Development using Java</li>
-                <li>Full-Stack Development</li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-bold">Software Engineering</p>
-              <ul className="list-disc list-outside pl-5">
-                <li>Software Quality Assurance</li>
-                <li>System Analysis, Design & Testing</li>
-                <li>Agile Software Development</li>
-                <li>Open Source Development</li>
-                <li>Linux Essentials</li>
-              </ul>
-            </div>
+            <p className="pt-5 italic">
+              <span className="font-bold not-italic text-black dark:text-white">
+                Harvard University
+              </span>
+              <span className="px-2">|</span>CS50x, Introduction to Computer Science
+            </p>
           </div>
-        </div>
+        </Section>
       </div>
     </>
   );
 };
 
-export default resume;
+export default Resume;
