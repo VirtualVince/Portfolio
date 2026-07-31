@@ -10,40 +10,46 @@ import ChironLogo from ".././public/projects/Chiron.png"
 
 const projects = [
   {
-    title: "ChironAI",
-    backgroundImg: ChironLogo,
-    projectUrl: "https://chironai.vercel.app/",
-    tech: "Nextjs, TypeScript, Tailwind",
+    title: "Orpheus",
+    backgroundImg: OrpheusLogo,
+    projectUrl: "https://app.orpheus.cx/",
+    tech: "TypeScript, Rust, Convex",
   },
   {
     title: "Creative Collective",
     backgroundImg: EGCCLogo,
     projectUrl: "https://creativecollectiveonline.com/",
-    tech: "LAMP Stack",
+    tech: "Ubuntu, HestiaCP, PHP, WordPress",
   },
   {
-    title: "Orpheus",
-    backgroundImg: OrpheusLogo,
-    projectUrl: "https://app.orpheus.cx/",
-    tech: "TypeScript, Convex, Rust",
+    title: "ChironAI",
+    backgroundImg: ChironLogo,
+    projectUrl: "https://chiron.virtualvince.ca/",
+    tech: "Next.js, TypeScript, Tailwind",
   },
   {
-    title: "K2E Canada",
-    backgroundImg: K2ELogo,
-    projectUrl: "https://www.k2e.ca/",
-    tech: "Liquid / Hydrogen + Remix",
+    title: "Exploding Paint Brushes",
+    backgroundImg: PaintLogo,
+    projectUrl: "https://brit.explodingpaintbrushes.com/",
+    tech: "LAMP, WordPress, MySQL",
   },
   {
     title: "Radiant Roots Vitality",
     backgroundImg: RadiantRootsLogo,
     projectUrl: "https://radiantrootsvitality.com/",
-    tech: "Nextjs, TypeScript, Tailwind",
+    tech: "Next.js, TypeScript, Tailwind",
   },
-    {
+  {
     title: "My YAYBI Way",
     backgroundImg: YaybiLogo,
     projectUrl: "https://myyaybiway.me/",
-    tech: "Liquid / Hydrogen + Remix",
+    tech: "Next.js, TypeScript, Shopify Storefront",
+  },
+  {
+    title: "K2E Canada",
+    backgroundImg: K2ELogo,
+    projectUrl: "https://www.k2e.ca/",
+    tech: "Shopify, Liquid",
   },
 ];
 
