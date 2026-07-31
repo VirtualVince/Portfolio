@@ -1,7 +1,9 @@
 import React from "react";
 import ProjectItem from "./ProjectItem";
-import YaybiLogo from "../public/projects/YaybiLogo.png";
-import PaintLogo from "../public/projects/ExplodingPaintBrushes.png";
+// My YAYBI Way is kept off this grid so it stays at 6 cards (3x2).
+// Restore this import and its entry below to bring it back.
+// import YaybiLogo from "../public/projects/YaybiLogo.png";
+import PaintLogo from "../public/projects/explodingpaintbrushes.png";
 import EGCCLogo from "../public/projects/EGCClogo.png";
 import K2ELogo from "../public/projects/K2-Big_1.avif";
 import RadiantRootsLogo from "../public/projects/radiantroots.png";
@@ -10,40 +12,43 @@ import ChironLogo from ".././public/projects/Chiron.png"
 
 const projects = [
   {
-    title: "ChironAI",
-    backgroundImg: ChironLogo,
-    projectUrl: "https://chironai.vercel.app/",
-    tech: "Nextjs, TypeScript, Tailwind",
+    title: "Orpheus",
+    backgroundImg: OrpheusLogo,
+    projectUrl: "https://app.orpheus.cx/",
+    tech: "TypeScript, Rust, Convex",
+    // The mark is flat white, so it vanishes on a light tile. Keep this one dark
+    // in both themes rather than inverting the logo.
+    imgBgClass: "bg-[#1a1a1a]",
   },
   {
     title: "Creative Collective",
     backgroundImg: EGCCLogo,
     projectUrl: "https://creativecollectiveonline.com/",
-    tech: "LAMP Stack",
+    tech: "Ubuntu, HestiaCP, PHP, WordPress",
   },
   {
-    title: "Orpheus",
-    backgroundImg: OrpheusLogo,
-    projectUrl: "https://app.orpheus.cx/",
-    tech: "TypeScript, Convex, Rust",
-  },
-  {
-    title: "K2E Canada",
-    backgroundImg: K2ELogo,
-    projectUrl: "https://www.k2e.ca/",
-    tech: "Liquid / Hydrogen + Remix",
+    title: "Exploding Paint Brushes",
+    backgroundImg: PaintLogo,
+    projectUrl: "https://explodingpaintbrushes.com/",
+    tech: "LAMP, WordPress, MySQL",
   },
   {
     title: "Radiant Roots Vitality",
     backgroundImg: RadiantRootsLogo,
     projectUrl: "https://radiantrootsvitality.com/",
-    tech: "Nextjs, TypeScript, Tailwind",
+    tech: "Next.js, TypeScript, Tailwind",
   },
-    {
-    title: "My YAYBI Way",
-    backgroundImg: YaybiLogo,
-    projectUrl: "https://myyaybiway.me/",
-    tech: "Liquid / Hydrogen + Remix",
+  {
+    title: "ChironAI",
+    backgroundImg: ChironLogo,
+    projectUrl: "https://chiron.virtualvince.ca/",
+    tech: "Next.js, TypeScript, Tailwind",
+  },
+  {
+    title: "K2E Canada",
+    backgroundImg: K2ELogo,
+    projectUrl: "https://www.k2e.ca/",
+    tech: "Shopify, Liquid",
   },
 ];
 

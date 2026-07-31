@@ -16,9 +16,23 @@ export const metadata: Metadata = {
   manifest: "/favicon_io/site.webmanifest",
 };
 
+// Runs before first paint so the theme class is on <html> before React hydrates,
+// which avoids a flash of the wrong theme. Kept identical to src/pages/_document.jsx.
+const themeScript = `
+try {
+  var stored = localStorage.getItem('theme');
+  var dark = stored ? stored === 'dark'
+    : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (dark) document.documentElement.classList.add('dark');
+} catch (e) {}
+`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>

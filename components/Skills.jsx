@@ -1,11 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import Html from "../public/skills/html.png";
-import Css from "../public/skills/css.png";
+
+// Local brand assets
 import Javascript from "../public/skills/javascript.png";
 import ReactImg from "../public/skills/react.png";
 import Tailwind from "../public/skills/tailwind.png";
-import Github from "../public/skills/github.png";
 import NextJS from "../public/skills/nextjs1.png";
 import Node from "../public/skills/node.png";
 import TypeScript from "../public/skills/typescript.svg";
@@ -27,85 +26,134 @@ import AWS from "../public/skills/amazonwebservices.svg";
 import Azure from "../public/skills/azure.png";
 import GCP from "../public/skills/googlecloud.svg";
 
+// Everything else comes from Simple Icons, already bundled inside react-icons.
+// No extra dependency, no files to download.
+import {
+  SiLinux, SiUbuntu, SiDocker, SiKubernetes, SiTerraform, SiJenkins,
+  SiApachekafka, SiCplusplus, SiPhp, SiLua, SiApollographql, SiMongodb,
+  SiMysql, SiArduino, SiC, SiAngular, SiGithubactions, SiBun, SiTurborepo,
+  SiNixos,
+} from "react-icons/si";
+
+// One accent per category, carried by the left border and the heading.
 const CATEGORY_COLORS = {
-  "Languages":      "#3e37ff",
-  "Frontend":       "#7c3aed",
-  "Frameworks":     "#0ea5e9",
-  "Databases":      "#059669",
-  "Tools":          "#d97706",
-  "Cloud & DevOps": "#db2777",
+  "Infrastructure & Operations": "#db2777",
+  "Containers & Orchestration": "#0891b2",
+  "Languages":                  "#3e37ff",
+  "Backend":                    "#0ea5e9",
+  "Data":                       "#059669",
+  "Embedded":                   "#ea580c",
+  "Frontend":                   "#7c3aed",
+  "Tooling":                    "#d97706",
 };
 
+// Each skill carries either `image` (a local asset) or `Icon` (a react-icons
+// component). Anything with neither falls back to an initials chip.
 const skillCategories = [
+  {
+    title: "Infrastructure & Operations",
+    skills: [
+      { name: "Linux",         Icon: SiLinux },
+      { name: "Ubuntu Server", Icon: SiUbuntu },
+      { name: "HestiaCP" },
+      { name: "DNS" },
+      { name: "Firewalls" },
+      { name: "Backups" },
+      { name: "AWS",           image: AWS },
+      { name: "Azure",         image: Azure },
+      { name: "Google Cloud",  image: GCP },
+      { name: "Vercel",        image: Vercel },
+    ],
+  },
+  {
+    title: "Containers & Orchestration",
+    skills: [
+      { name: "Docker",     Icon: SiDocker },
+      { name: "Kubernetes", Icon: SiKubernetes },
+      { name: "Terraform",  Icon: SiTerraform },
+      { name: "Jenkins",    Icon: SiJenkins },
+      { name: "Kafka",      Icon: SiApachekafka },
+      { name: "Keycloak" },
+    ],
+  },
   {
     title: "Languages",
     skills: [
-      { name: "JavaScript",  image: Javascript },
-      { name: "TypeScript",  image: TypeScript },
-      { name: "Python",      image: Python },
-      { name: "Java",        image: Java },
-      { name: "C#",          image: CSharp },
-      { name: "Go",          image: Go },
-      { name: "SQL",         image: SQL },
-      { name: "Lua",         image: null },
-      { name: "Liquid",      image: Shopify },
+      { name: "Go",         image: Go },
+      { name: "TypeScript", image: TypeScript },
+      { name: "JavaScript", image: Javascript },
+      { name: "Python",     image: Python },
+      { name: "C++",        Icon: SiCplusplus },
+      { name: "C#",         image: CSharp },
+      { name: "Java",       image: Java },
+      { name: "PHP",        Icon: SiPhp },
+      { name: "SQL",        image: SQL },
+      { name: "Lua",        Icon: SiLua },
+      { name: "Liquid",     image: Shopify },
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      { name: "Node.js",        image: Node },
+      { name: "Express",        image: Express },
+      { name: "Apollo GraphQL", Icon: SiApollographql },
+      { name: "ASP.NET",        image: AspNet },
+      { name: "Convex" },
+      { name: "REST APIs",      image: RestAPI },
+    ],
+  },
+  {
+    title: "Data",
+    skills: [
+      { name: "PostgreSQL", image: PostgreSQL },
+      { name: "MongoDB",    Icon: SiMongodb },
+      { name: "MySQL",      Icon: SiMysql },
+      { name: "SQLite",     image: SQLite },
+    ],
+  },
+  {
+    title: "Embedded",
+    skills: [
+      { name: "Arduino",                Icon: SiArduino },
+      { name: "C for microcontrollers", Icon: SiC },
+      { name: "I2C" },
+      { name: "SPI" },
+      { name: "UART" },
     ],
   },
   {
     title: "Frontend",
     skills: [
-      { name: "HTML",         image: Html },
-      { name: "CSS",          image: Css },
       { name: "React",        image: ReactImg },
       { name: "Next.js",      image: NextJS },
+      { name: "Angular",      Icon: SiAngular },
       { name: "Tailwind CSS", image: Tailwind },
+      { name: "Shopify",      image: Shopify },
     ],
   },
   {
-    title: "Frameworks",
+    title: "Tooling",
     skills: [
-      { name: "Node.js",          image: Node },
-      { name: "Express.js",       image: Express },
-      { name: "ASP.NET",          image: AspNet },
-      { name: "Hydrogen / Remix", image: Shopify },
-    ],
-  },
-  {
-    title: "Databases",
-    skills: [
-      { name: "PostgreSQL", image: PostgreSQL },
-      { name: "SQLite",     image: SQLite },
-      { name: "LuaSQL",     image: null },
-      { name: "MySQL",      image: null },
-    ],
-  },
-  {
-    title: "Tools",
-    skills: [
-      { name: "Git",       image: Git },
-      { name: "GitHub",    image: Github },
-      { name: "REST APIs", image: RestAPI },
-      { name: "Vercel",    image: Vercel },
-      { name: "Neovim",    image: Neovim },
-    ],
-  },
-  {
-    title: "Cloud & DevOps",
-    skills: [
-      { name: "AWS",          image: AWS },
-      { name: "Azure",        image: Azure },
-      { name: "Google Cloud", image: GCP },
+      { name: "Git",            image: Git },
+      { name: "GitHub Actions", Icon: SiGithubactions },
+      { name: "Neovim",         image: Neovim },
+      { name: "Bun",            Icon: SiBun },
+      { name: "Turborepo",      Icon: SiTurborepo },
+      { name: "Nix",            Icon: SiNixos },
     ],
   },
 ];
 
-const SkillChip = ({ name, image, accent }) => (
+const SkillChip = ({ name, image, Icon, accent }) => (
   <div
     className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white dark:bg-[#222222] hover:scale-105 ease-in duration-200 cursor-default"
     style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.05)" }}
   >
     {image ? (
       <Image src={image} width={22} height={22} alt={name} style={{ objectFit: "contain" }} />
+    ) : Icon ? (
+      <Icon size={22} color={accent} style={{ flexShrink: 0 }} aria-hidden="true" />
     ) : (
       <span
         className="flex items-center justify-center text-[10px] font-bold rounded"
@@ -157,6 +205,7 @@ const Skills = () => {
                       key={skill.name}
                       name={skill.name}
                       image={skill.image}
+                      Icon={skill.Icon}
                       accent={accent}
                     />
                   ))}

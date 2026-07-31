@@ -16,27 +16,27 @@ const About = () => {
             Who I am
           </h2>
           <p className="py-2 text-gray-700 dark:text-gray-300">
-            I&apos;m a freelance web developer and the founder of{" "}
-            <span className="font-semibold text-black dark:text-white">Virtual Vince</span>, a development
-            practice focused on helping small businesses and organizations build
-            a strong online presence. My client work spans a range of industries
-            from community arts organizations and professional education
-            platforms to health and wellness practices and automotive businesses.
+            I build and run websites and web apps for clients through my business,{" "}
+            <span className="font-semibold text-black dark:text-white">Virtual Vince</span>.
+            The work spans community arts organizations, professional education,
+            health practices and e-commerce. I do not just build these, I operate
+            them, including the multi-tenant Ubuntu server several of them are
+            deployed to.
           </p>
           <p className="py-2 text-gray-700 dark:text-gray-300">
-            I specialize in building responsive, production-ready websites and
-            apps using modern tooling including Next.js, React, Tailwind CSS,
-            and TypeScript, with backend experience across Node.js, ASP.NET,
-            Express, and cloud platforms like AWS, Azure, and GCP. I manage
-            everything from initial scoping and design through to deployment and
-            ongoing maintenance.
+            Day to day that means Next.js, TypeScript and Tailwind on the front,
+            Node, Express and GraphQL behind it, and Linux underneath. I also
+            co-founded{" "}
+            <span className="font-semibold text-black dark:text-white">Orpheus</span>,
+            version control for music production, where I own the backend schema and
+            the validation on everything written to the database.
           </p>
           <p className="py-2 text-gray-700 dark:text-gray-300">
-            Alongside my client work, I&apos;m completing an Advanced Diploma in
-            Computer Programming and Analysis at George Brown College, where I&apos;m
-            currently building a roguelike game headed to Steam as my capstone
-            project. I bring the same professional standards to academic work
-            that I apply to every client engagement.
+            Lately I have been moving toward embedded and backend systems work, which
+            is where I want to end up. That looks like Arduino builds on the bench and
+            distributed systems primitives written from scratch in Go. I hold an
+            Advanced Diploma in Computer Programming and Analysis from George Brown
+            College, finishing on the Dean&apos;s List.
           </p>
           <p className="py-2 text-gray-700 dark:text-gray-300">
             Check out my{" "}
