@@ -64,7 +64,6 @@ const Navbar = () => {
               onClick={toggleTheme}
               aria-label="Toggle dark mode"
               className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-[#3e37ff] dark:hover:text-[#7c78ff] transition-colors duration-200 shadow-none bg-transparent dark:shadow-none"
-              style={{ boxShadow: "none" }}
             >
               {mounted ? (
                 dark ? <HiSun size={20} /> : <HiMoon size={20} />
@@ -79,7 +78,6 @@ const Navbar = () => {
             <a
               href="/#book"
               className="text-sm uppercase tracking-widest px-4 py-2 rounded-lg bg-[#3e37ff] text-white hover:bg-[#2d27e0] transition-colors duration-200"
-              style={{ boxShadow: "none" }}
             >
               Book a Call
             </a>
@@ -92,7 +90,6 @@ const Navbar = () => {
             onClick={toggleTheme}
             aria-label="Toggle dark mode"
             className="p-2 text-gray-500 dark:text-gray-400 hover:text-[#3e37ff] transition-colors duration-200 shadow-none bg-transparent dark:shadow-none"
-            style={{ boxShadow: "none" }}
           >
             {mounted ? (
                 dark ? <HiSun size={20} /> : <HiMoon size={20} />
@@ -102,7 +99,6 @@ const Navbar = () => {
           </button>
           <button
             className="p-2 text-gray-600 dark:text-gray-300 hover:text-[#3e37ff] transition-colors duration-200 shadow-none bg-transparent dark:shadow-none"
-            style={{ boxShadow: "none" }}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -132,7 +128,6 @@ const Navbar = () => {
               <a
                 href="/#book"
                 className="inline-block text-sm uppercase tracking-widest px-4 py-2 rounded-lg bg-[#3e37ff] text-white hover:bg-[#2d27e0] transition-colors duration-200"
-                style={{ boxShadow: "none" }}
                 onClick={() => setMenuOpen(false)}
               >
                 Book a Call
