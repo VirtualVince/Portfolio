@@ -35,6 +35,13 @@ import {
   SiNixos,
 } from "react-icons/si";
 
+// Generic marks for things with no brand logo: protocols, services and concepts.
+import { MdDns, MdBackup } from "react-icons/md";
+import {
+  TbServerCog, TbShieldLock, TbKey, TbDatabase, TbCpu, TbPlugConnected,
+  TbArrowsExchange,
+} from "react-icons/tb";
+
 // One accent per category, carried by the left border and the heading.
 const CATEGORY_COLORS = {
   "Infrastructure & Operations": "#db2777",
@@ -55,10 +62,10 @@ const skillCategories = [
     skills: [
       { name: "Linux",         Icon: SiLinux },
       { name: "Ubuntu Server", Icon: SiUbuntu },
-      { name: "HestiaCP" },
-      { name: "DNS" },
-      { name: "Firewalls" },
-      { name: "Backups" },
+      { name: "HestiaCP",  Icon: TbServerCog },
+      { name: "DNS",       Icon: MdDns },
+      { name: "Firewalls", Icon: TbShieldLock },
+      { name: "Backups",   Icon: MdBackup },
       { name: "AWS",           image: AWS },
       { name: "Azure",         image: Azure },
       { name: "Google Cloud",  image: GCP },
@@ -73,7 +80,7 @@ const skillCategories = [
       { name: "Terraform",  Icon: SiTerraform },
       { name: "Jenkins",    Icon: SiJenkins },
       { name: "Kafka",      Icon: SiApachekafka },
-      { name: "Keycloak" },
+      { name: "Keycloak",  Icon: TbKey },
     ],
   },
   {
@@ -99,7 +106,7 @@ const skillCategories = [
       { name: "Express",        image: Express },
       { name: "Apollo GraphQL", Icon: SiApollographql },
       { name: "ASP.NET",        image: AspNet },
-      { name: "Convex" },
+      { name: "Convex",    Icon: TbDatabase },
       { name: "REST APIs",      image: RestAPI },
     ],
   },
@@ -117,9 +124,9 @@ const skillCategories = [
     skills: [
       { name: "Arduino",                Icon: SiArduino },
       { name: "C for microcontrollers", Icon: SiC },
-      { name: "I2C" },
-      { name: "SPI" },
-      { name: "UART" },
+      { name: "I2C",       Icon: TbCpu },
+      { name: "SPI",       Icon: TbPlugConnected },
+      { name: "UART",      Icon: TbArrowsExchange },
     ],
   },
   {

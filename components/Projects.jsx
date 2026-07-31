@@ -4,9 +4,9 @@ import ProjectItem from "./ProjectItem";
 // Restore this import and its entry below to bring it back.
 // import YaybiLogo from "../public/projects/YaybiLogo.png";
 import PaintLogo from "../public/projects/explodingpaintbrushes.png";
-import EGCCLogo from "../public/projects/EGCClogo.png";
+import EGCCLogo from "../public/projects/Elizabeth-Gardens-Creative-Collective-Logo.webp";
 import K2ELogo from "../public/projects/K2-Big_1.avif";
-import RadiantRootsLogo from "../public/projects/radiantroots.png";
+import RadiantRootsLogo from "../public/projects/radiantrootsvitality.png";
 import OrpheusLogo from "../public/projects/orpheus_icon.svg"
 import ChironLogo from ".././public/projects/Chiron.png"
 
