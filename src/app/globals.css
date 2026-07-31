@@ -2,10 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Brand: navy, gold, black.
+
+  Gold cannot be a single value across both themes. Measured WCAG contrast:
+    #D4AF37 bright  ->  2.10 on white, 9.10 on navy   (dark theme only)
+    #A67C0E mid     ->  3.81 on white, 4.53 on navy   (large text and borders)
+    #8A6510 deep    ->  5.32 on white, 3.24 on navy   (light theme text)
+
+  So gold is a text colour in light mode and an accent colour in dark mode.
+  Never put bright gold on a light surface, never put deep gold on navy.
+
+  Values are space separated RGB triplets so Tailwind's <alpha-value> works
+  and modifiers like bg-accent/20 keep functioning.
+*/
+
 @layer base {
+  :root {
+    --c-bg: 255 255 255;
+    --c-surface: 245 246 249;
+    --c-raised: 255 255 255;
+    --c-content: 10 27 51; /* navy 900, 17.25 on white */
+    --c-muted: 74 85 104;
+    --c-accent: 138 101 16; /* gold deep, 5.32 on white */
+    --c-accent-hover: 107 78 12;
+    --c-on-accent: 255 255 255;
+    --c-line: 216 220 229;
+  }
+
+  .dark {
+    --c-bg: 8 9 12; /* ink */
+    --c-surface: 10 27 51; /* navy 900 as the elevated surface */
+    --c-raised: 15 37 71; /* navy 800 */
+    --c-content: 232 234 240; /* 16.55 on ink */
+    --c-muted: 154 163 181;
+    --c-accent: 212 175 55; /* gold bright, 9.47 on ink */
+    --c-accent-hover: 229 193 88;
+    --c-on-accent: 8 9 12; /* dark text on a gold fill, white would be 2.1 */
+    --c-line: 27 58 107;
+  }
+
   body {
-    @apply bg-[#ffffff] text-[#000000] tracking-wide;
-    @apply dark:bg-[#0f0f0f] dark:text-[#f0f0f0];
+    @apply bg-bg text-content tracking-wide;
   }
 
   h1,
@@ -18,7 +56,7 @@
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl font-[Raleway];
+    @apply text-4xl sm:text-5xl md:text-6xl font-display;
   }
 
   h2 {
@@ -29,8 +67,33 @@
     @apply cursor-pointer;
   }
 
-  button {
-    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white;
-    @apply dark:shadow-gray-800;
+  /* Keyboard focus must stay visible in both themes. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg;
+  }
+}
+
+@layer components {
+  /* The single primary action. On-accent flips so the label stays readable
+     against gold in either theme. */
+  .btn-primary {
+    @apply rounded-xl uppercase tracking-widest px-5 py-3
+           bg-accent text-on-accent font-semibold
+           hover:bg-accent-hover transition-colors duration-200;
+  }
+
+  .btn-ghost {
+    @apply rounded-xl uppercase tracking-widest px-5 py-3
+           border border-line text-content
+           hover:border-accent hover:text-accent transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-raised border border-line rounded-xl
+           hover:border-accent transition-colors duration-200;
+  }
+
+  .link-accent {
+    @apply text-accent hover:text-accent-hover underline underline-offset-2;
   }
 }

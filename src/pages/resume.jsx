@@ -167,7 +167,7 @@ const SKILLS = [
 
 const Section = ({ title, children }) => (
   <>
-    <h5 className="text-center underline text-[18px] py-4 text-black dark:text-white">
+    <h5 className="text-center underline text-[18px] py-4 text-content">
       {title}
     </h5>
     {children}
@@ -177,23 +177,23 @@ const Section = ({ title, children }) => (
 const LinkedItem = ({ item }) => (
   <div className="py-3">
     <p className="italic">
-      <span className="font-bold not-italic text-black dark:text-white">
+      <span className="font-bold not-italic text-content">
         {item.name}
       </span>
       <span className="px-2">|</span>
-      <span className="text-gray-600 dark:text-gray-400">{item.stack}</span>
+      <span className="text-muted">{item.stack}</span>
     </p>
     <p className="py-1 text-sm">
       <a
         href={item.url}
         target="_blank"
         rel="noreferrer"
-        className="underline text-[#3e37ff] dark:text-[#8fa6ff] break-all"
+        className="underline text-accent break-all"
       >
         {item.url.replace(/^https?:\/\//, "")}
       </a>
     </p>
-    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{item.note}</p>
+    <p className="text-muted leading-relaxed">{item.note}</p>
   </div>
 );
 
@@ -209,10 +209,10 @@ const Resume = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <div className="max-w-[940px] mx-auto p-2 pt-[120px] text-black dark:text-white">
+      <div className="max-w-[940px] mx-auto p-2 pt-[120px] text-content">
         <h2 className="text-center">Resume</h2>
 
-        <div className="bg-[#d0d4d6] dark:bg-[#1a1a1a] my-4 p-4 w-full flex justify-between items-center rounded">
+        <div className="bg-surface my-4 p-4 w-full flex justify-between items-center rounded">
           <h2 className="text-center">Vincente Sequeira</h2>
           <div className="flex">
             <a
@@ -248,14 +248,14 @@ const Resume = () => {
           </div>
         </div>
 
-        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{SUMMARY}</p>
+        <p className="text-muted leading-relaxed">{SUMMARY}</p>
 
         <Section title="Professional Experience">
           <div className="py-2">
             {EXPERIENCE.map((job) => (
               <div key={job.org} className="py-4">
                 <p className="italic">
-                  <span className="font-bold not-italic text-black dark:text-white">
+                  <span className="font-bold not-italic text-content">
                     {job.org}
                   </span>
                   <span className="px-2">|</span>
@@ -266,9 +266,9 @@ const Resume = () => {
                   {job.location}
                 </p>
                 {job.blurb && (
-                  <p className="py-1 text-gray-700 dark:text-gray-300">{job.blurb}</p>
+                  <p className="py-1 text-muted">{job.blurb}</p>
                 )}
-                <ul className="list-disc list-outside px-7 py-1 leading-relaxed text-gray-700 dark:text-gray-300">
+                <ul className="list-disc list-outside px-7 py-1 leading-relaxed text-muted">
                   {job.points.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
@@ -299,16 +299,16 @@ const Resume = () => {
             {SKILLS.map((group) => (
               <div
                 key={group.category}
-                className="bg-white dark:bg-[#1a1a1a] p-4 rounded-lg shadow-md"
+                className="bg-raised p-4 rounded-lg shadow-md"
               >
-                <h6 className="font-bold text-[16px] mb-2 text-[#5651e5] dark:text-[#8fa6ff]">
+                <h6 className="font-bold text-[16px] mb-2 text-accent">
                   {group.category}
                 </h6>
                 <div className="flex flex-wrap justify-center gap-2">
                   {group.items.map((skill) => (
                     <span
                       key={skill}
-                      className="bg-gray-100 dark:bg-[#2a2a2a] rounded-full px-3 py-1 text-sm text-gray-700 dark:text-gray-300"
+                      className="bg-surface rounded-full px-3 py-1 text-sm text-muted"
                     >
                       {skill}
                     </span>
@@ -322,14 +322,14 @@ const Resume = () => {
         <Section title="Education">
           <div className="py-2 pb-10">
             <p className="italic">
-              <span className="font-bold not-italic text-black dark:text-white">
+              <span className="font-bold not-italic text-content">
                 George Brown College, Toronto
               </span>
               <span className="px-2">|</span>Advanced Diploma, Computer Programming
               and Analysis
               <span className="px-2">|</span>2026
             </p>
-            <ul className="list-disc list-outside px-7 py-1 leading-relaxed text-gray-700 dark:text-gray-300">
+            <ul className="list-disc list-outside px-7 py-1 leading-relaxed text-muted">
               <li>Dean&apos;s List, final semester.</li>
               <li>
                 Coursework included Developer Operations, deploying a containerized
@@ -344,7 +344,7 @@ const Resume = () => {
             </ul>
 
             <p className="pt-5 italic">
-              <span className="font-bold not-italic text-black dark:text-white">
+              <span className="font-bold not-italic text-content">
                 Harvard University
               </span>
               <span className="px-2">|</span>CS50x, Introduction to Computer Science
