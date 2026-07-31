@@ -80,7 +80,7 @@ const Contact = () => {
                   GitHub
                 </a>
                 <a
-                  href="https://www.youtube.com/@vssincorporated"
+                  href="https://www.youtube.com/@virtualvincebuilds"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-[#5651e5] dark:hover:text-[#7c78ff] transition-colors duration-200"
@@ -93,7 +93,10 @@ const Contact = () => {
           </div>
 
           {/* Right — Calendly inline embed */}
-          <div className="lg:col-span-2 shadow-xl shadow-gray-400 dark:shadow-gray-800 rounded-xl overflow-hidden">
+          <div
+            id="book"
+            className="lg:col-span-2 shadow-xl shadow-gray-400 dark:shadow-gray-800 rounded-xl overflow-hidden scroll-mt-24"
+          >
             <div
               className="calendly-inline-widget w-full"
               data-url="https://calendly.com/virtualvince2020/30min?hide_gdpr_banner=1&primary_color=3e37ff"

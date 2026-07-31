@@ -70,9 +70,7 @@ const Navbar = () => {
           {/* CTA */}
           <li>
             <a
-              href="https://calendly.com/virtualvince2020/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#book"
               className="text-sm uppercase tracking-widest px-4 py-2 rounded-lg bg-[#3e37ff] text-white hover:bg-[#2d27e0] transition-colors duration-200"
               style={{ boxShadow: "none" }}
             >
@@ -121,9 +119,7 @@ const Navbar = () => {
             ))}
             <li>
               <a
-                href="https://calendly.com/virtualvince2020/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/#book"
                 className="inline-block text-sm uppercase tracking-widest px-4 py-2 rounded-lg bg-[#3e37ff] text-white hover:bg-[#2d27e0] transition-colors duration-200"
                 style={{ boxShadow: "none" }}
                 onClick={() => setMenuOpen(false)}

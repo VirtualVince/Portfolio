@@ -1,12 +1,14 @@
 import React from "react";
 import ProjectItem from "./ProjectItem";
 import YaybiLogo from "../public/projects/YaybiLogo.png";
-import PaintLogo from "../public/projects/ExplodingPaintBrushes.png";
+import PaintLogo from "../public/projects/explodingpaintbrushes.png";
 import EGCCLogo from "../public/projects/EGCClogo.png";
 import K2ELogo from "../public/projects/K2-Big_1.avif";
 import RadiantRootsLogo from "../public/projects/radiantroots.png";
 import OrpheusLogo from "../public/projects/orpheus_icon.svg"
-import ChironLogo from ".././public/projects/Chiron.png"
+// ChironAI is omitted from this grid to keep it at 6 cards, which lays out as a
+// clean 3x2. Re-add the entry below and restore this import to bring it back.
+// import ChironLogo from ".././public/projects/Chiron.png"
 
 const projects = [
   {
@@ -22,15 +24,9 @@ const projects = [
     tech: "Ubuntu, HestiaCP, PHP, WordPress",
   },
   {
-    title: "ChironAI",
-    backgroundImg: ChironLogo,
-    projectUrl: "https://chiron.virtualvince.ca/",
-    tech: "Next.js, TypeScript, Tailwind",
-  },
-  {
     title: "Exploding Paint Brushes",
     backgroundImg: PaintLogo,
-    projectUrl: "https://brit.explodingpaintbrushes.com/",
+    projectUrl: "https://explodingpaintbrushes.com/",
     tech: "LAMP, WordPress, MySQL",
   },
   {

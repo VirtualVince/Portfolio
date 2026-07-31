@@ -72,28 +72,28 @@ const CLIENT_WORK = [
     note: "Community arts organization on a multi tenant VPS I provision and administer end to end. 11 custom plugins including an audit log capturing the exact diff of every content change.",
   },
   {
-    name: "Exploding Paint Brushes",
-    stack: "LAMP, WordPress, MySQL",
-    url: "https://brit.explodingpaintbrushes.com/",
-    note: "A separate tenant on the same VPS, managed independently. Custom backend work and MySQL query tuning on a LAMP stack.",
-  },
-  {
     name: "Radiant Roots Vitality",
     stack: "Next.js, TypeScript, Tailwind",
     url: "https://www.radiantrootsvitality.com/",
     note: "Health practice site with Google Maps and a Fullscript storefront handoff. Hosted and maintained on a monthly retainer.",
   },
   {
-    name: "My YAYBI Way",
-    stack: "Next.js, TypeScript, Tailwind, Shopify Storefront",
-    url: "https://myyaybiway.me/",
-    note: "Custom front end pulling live products, images and metadata from a Shopify storefront.",
+    name: "Exploding Paint Brushes",
+    stack: "LAMP, WordPress, MySQL",
+    url: "https://explodingpaintbrushes.com/",
+    note: "Artist portfolio and storefront, a separate tenant on the same VPS, managed independently. Custom backend work and MySQL query tuning on a LAMP stack.",
   },
   {
     name: "K2E Canada",
     stack: "Shopify, Liquid",
     url: "https://www.k2e.ca/",
     note: "Professional education storefront with custom Liquid.",
+  },
+  {
+    name: "My YAYBI Way",
+    stack: "Next.js, TypeScript, Tailwind, Shopify Storefront",
+    url: "https://myyaybiway.me/",
+    note: "Custom front end pulling live products, images and metadata from a Shopify storefront.",
   },
 ];
 
@@ -250,6 +250,31 @@ const Resume = () => {
 
         <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{SUMMARY}</p>
 
+        <Section title="Skills">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[900px] mx-auto py-2">
+            {SKILLS.map((group) => (
+              <div
+                key={group.category}
+                className="bg-white dark:bg-[#1a1a1a] p-4 rounded-lg shadow-md"
+              >
+                <h6 className="font-bold text-[16px] mb-2 text-[#5651e5] dark:text-[#8fa6ff]">
+                  {group.category}
+                </h6>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {group.items.map((skill) => (
+                    <span
+                      key={skill}
+                      className="bg-gray-100 dark:bg-[#2a2a2a] rounded-full px-3 py-1 text-sm text-gray-700 dark:text-gray-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
         <Section title="Professional Experience">
           <div className="py-2">
             {EXPERIENCE.map((job) => (
@@ -290,31 +315,6 @@ const Resume = () => {
           <div className="py-2">
             {PROJECTS.map((item) => (
               <LinkedItem key={item.name} item={item} />
-            ))}
-          </div>
-        </Section>
-
-        <Section title="Skills">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[900px] mx-auto py-2">
-            {SKILLS.map((group) => (
-              <div
-                key={group.category}
-                className="bg-white dark:bg-[#1a1a1a] p-4 rounded-lg shadow-md"
-              >
-                <h6 className="font-bold text-[16px] mb-2 text-[#5651e5] dark:text-[#8fa6ff]">
-                  {group.category}
-                </h6>
-                <div className="flex flex-wrap justify-center gap-2">
-                  {group.items.map((skill) => (
-                    <span
-                      key={skill}
-                      className="bg-gray-100 dark:bg-[#2a2a2a] rounded-full px-3 py-1 text-sm text-gray-700 dark:text-gray-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
             ))}
           </div>
         </Section>
