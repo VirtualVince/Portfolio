@@ -27,6 +27,15 @@ import AWS from "../public/skills/amazonwebservices.svg";
 import Azure from "../public/skills/azure.png";
 import GCP from "../public/skills/googlecloud.svg";
 
+const CATEGORY_COLORS = {
+  "Languages":      "#3e37ff",
+  "Frontend":       "#7c3aed",
+  "Frameworks":     "#0ea5e9",
+  "Databases":      "#059669",
+  "Tools":          "#d97706",
+  "Cloud & DevOps": "#db2777",
+};
+
 const skillCategories = [
   {
     title: "Languages",
@@ -90,9 +99,9 @@ const skillCategories = [
   },
 ];
 
-const SkillChip = ({ name, image }) => (
+const SkillChip = ({ name, image, accent }) => (
   <div
-    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface hover:scale-105 ease-in duration-200 cursor-default"
+    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white dark:bg-[#222222] hover:scale-105 ease-in duration-200 cursor-default"
     style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.05)" }}
   >
     {image ? (
@@ -103,15 +112,15 @@ const SkillChip = ({ name, image }) => (
         style={{
           width: 22,
           height: 22,
-          background: "rgb(var(--c-accent) / 0.13)",
-          color: "rgb(var(--c-accent))",
+          background: accent + "22",
+          color: accent,
           flexShrink: 0,
         }}
       >
         {name.slice(0, 2).toUpperCase()}
       </span>
     )}
-    <span className="text-sm text-muted whitespace-nowrap">{name}</span>
+    <span className="text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">{name}</span>
   </div>
 );
 
@@ -119,25 +128,26 @@ const Skills = () => {
   return (
     <div id="skills" className="w-full py-16 px-2">
       <div className="max-w-[1240px] mx-auto">
-        <p className="text-xl tracking-widest uppercase text-accent">
+        <p className="text-xl tracking-widest uppercase text-[#5651e5]">
           Skills
         </p>
-        <h2 className="py-4 text-content">What I Work With</h2>
+        <h2 className="py-4 text-black dark:text-white">What I Work With</h2>
 
         <div className="grid md:grid-cols-2 gap-5 mt-2">
           {skillCategories.map((category) => {
+            const accent = CATEGORY_COLORS[category.title] || "#5651e5";
             return (
               <div
                 key={category.title}
-                className="rounded-xl bg-raised p-5"
+                className="rounded-xl bg-gray-50 dark:bg-[#1a1a1a] p-5"
                 style={{
-                  borderLeft: "4px solid rgb(var(--c-accent))",
+                  borderLeft: `4px solid ${accent}`,
                   boxShadow: "0 1px 6px rgba(0,0,0,0.06)",
                 }}
               >
                 <h3
                   className="text-sm font-semibold uppercase tracking-widest mb-4"
-                  style={{ color: "rgb(var(--c-accent))" }}
+                  style={{ color: accent }}
                 >
                   {category.title}
                 </h3>
@@ -147,6 +157,7 @@ const Skills = () => {
                       key={skill.name}
                       name={skill.name}
                       image={skill.image}
+                      accent={accent}
                     />
                   ))}
                 </div>
