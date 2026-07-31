@@ -2,13 +2,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
  
-const ProjectItem = ({ title, backgroundImg, bgColor, tech, projectUrl }) => {
+// imgBgClass overrides the tile background behind the logo. Needed for logos that
+// are a single flat colour, since a white mark on the default white light-mode tile
+// disappears entirely. Pass a permanently dark tile for those.
+const ProjectItem = ({ title, backgroundImg, bgColor, tech, projectUrl, imgBgClass }) => {
   return (
     <div className='relative w-full shadow-xl shadow-gray-400 dark:shadow-gray-800 rounded-xl group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff] overflow-hidden'>
       <div className='relative w-full' style={{ aspectRatio: '4/3' }}>
         {backgroundImg ? (
           <Image
-            className='rounded-xl group-hover:opacity-10 object-contain p-4 bg-white dark:bg-[#1a1a1a]'
+            className={`rounded-xl group-hover:opacity-10 object-contain p-4 ${
+              imgBgClass || 'bg-white dark:bg-[#1a1a1a]'
+            }`}
             src={backgroundImg}
             alt={title}
             fill

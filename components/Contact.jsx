@@ -62,7 +62,7 @@ const Contact = () => {
               </p>
               <div className="flex flex-col gap-3">
                 <a
-                  href="https://www.linkedin.com/in/vincente-sequeira-1824b4245/"
+                  href="https://www.linkedin.com/in/vince-sequeira-1824b4245/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 hover:text-[#5651e5] dark:hover:text-[#7c78ff] transition-colors duration-200"

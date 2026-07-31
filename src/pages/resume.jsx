@@ -216,7 +216,7 @@ const Resume = () => {
           <h2 className="text-center">Vincente Sequeira</h2>
           <div className="flex">
             <a
-              href="https://www.linkedin.com/in/vincente-sequeira-1824b4245/"
+              href="https://www.linkedin.com/in/vince-sequeira-1824b4245/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"

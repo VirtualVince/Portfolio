@@ -15,7 +15,10 @@ const links = [
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const { dark, toggleTheme } = useTheme();
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -25,11 +28,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed w-full z-[100] transition-all duration-300 bg-white dark:bg-[#0f0f0f]"
-      style={{
-        boxShadow: scrolled ? "0 1px 12px rgba(0,0,0,0.10)" : "none",
-        borderBottom: scrolled ? "none" : "1px solid rgba(128,128,128,0.12)",
-      }}
+      className={`fixed w-full z-[100] transition-all duration-300 bg-white dark:bg-[#0f0f0f] ${
+        scrolled
+          ? "shadow-[0_1px_12px_rgba(0,0,0,0.10)] border-b border-transparent"
+          : "border-b border-[rgba(128,128,128,0.12)]"
+      }`}
     >
       <div className="max-w-[1240px] mx-auto px-4 2xl:px-0 h-20 flex items-center justify-between">
 
@@ -63,7 +66,11 @@ const Navbar = () => {
               className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-[#3e37ff] dark:hover:text-[#7c78ff] transition-colors duration-200 shadow-none bg-transparent dark:shadow-none"
               style={{ boxShadow: "none" }}
             >
-              {dark ? <HiSun size={20} /> : <HiMoon size={20} />}
+              {mounted ? (
+                dark ? <HiSun size={20} /> : <HiMoon size={20} />
+              ) : (
+                <span className="block w-5 h-5" aria-hidden="true" />
+              )}
             </button>
           </li>
 
@@ -87,7 +94,11 @@ const Navbar = () => {
             className="p-2 text-gray-500 dark:text-gray-400 hover:text-[#3e37ff] transition-colors duration-200 shadow-none bg-transparent dark:shadow-none"
             style={{ boxShadow: "none" }}
           >
-            {dark ? <HiSun size={20} /> : <HiMoon size={20} />}
+            {mounted ? (
+                dark ? <HiSun size={20} /> : <HiMoon size={20} />
+              ) : (
+                <span className="block w-5 h-5" aria-hidden="true" />
+              )}
           </button>
           <button
             className="p-2 text-gray-600 dark:text-gray-300 hover:text-[#3e37ff] transition-colors duration-200 shadow-none bg-transparent dark:shadow-none"
