@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import "../app/globals.css";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 // Keep this file in sync with ~/job/resume/master.md, which generates the PDF.
@@ -133,7 +132,7 @@ const PROJECTS = [
 const SKILLS = [
   {
     category: "Infrastructure & Operations",
-    items: ["Linux", "Ubuntu Server", "HestiaCP", "DNS", "Firewalls", "Backups", "AWS", "Azure", "GCP", "Vercel"],
+    items: ["Linux", "Ubuntu Server", "HestiaCP", "DNS", "Firewalls", "Backups", "AWS", "Azure", "Google Cloud", "Vercel"],
   },
   {
     category: "Containers & Orchestration",
@@ -141,11 +140,11 @@ const SKILLS = [
   },
   {
     category: "Languages",
-    items: ["Go", "TypeScript", "JavaScript", "Python", "C++", "C#", "Java", "PHP", "SQL", "Lua"],
+    items: ["Go", "TypeScript", "JavaScript", "Python", "C++", "C#", "Java", "PHP", "SQL", "Lua", "Liquid"],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "Apollo GraphQL", "ASP.NET", "Convex", "REST"],
+    items: ["Node.js", "Express", "Apollo GraphQL", "ASP.NET", "Convex", "REST APIs"],
   },
   {
     category: "Data",
@@ -157,7 +156,7 @@ const SKILLS = [
   },
   {
     category: "Frontend",
-    items: ["React", "Next.js", "Angular", "Tailwind CSS"],
+    items: ["React", "Next.js", "Angular", "Tailwind CSS", "Shopify"],
   },
   {
     category: "Tooling",

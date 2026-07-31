@@ -9,18 +9,29 @@ export const ThemeProvider = ({ children }) => {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDark = stored ? stored === "dark" : prefersDark;
+    // The inline script in _document / layout has already put the class on <html>.
+    // Read from the DOM rather than recomputing, so React state and the class can
+    // never disagree.
+    const isDark = document.documentElement.classList.contains("dark");
     setDark(isDark);
-    document.documentElement.classList.toggle("dark", isDark);
+
+    // Follow the OS only while the user has not made an explicit choice.
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = (e) => {
+      if (localStorage.getItem("theme")) return;
+      setDark(e.matches);
+      document.documentElement.classList.toggle("dark", e.matches);
+    };
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
   }, []);
 
   const toggleTheme = () => {
-    const next = !dark;
-    setDark(next);
+    // Derive from the DOM, not from state, so a stale render cannot flip the wrong way.
+    const next = !document.documentElement.classList.contains("dark");
     document.documentElement.classList.toggle("dark", next);
     localStorage.setItem("theme", next ? "dark" : "light");
+    setDark(next);
   };
 
   return (

@@ -1,7 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import Html from "../public/skills/html.png";
-import Css from "../public/skills/css.png";
 import Javascript from "../public/skills/javascript.png";
 import ReactImg from "../public/skills/react.png";
 import Tailwind from "../public/skills/tailwind.png";
@@ -27,74 +25,98 @@ import AWS from "../public/skills/amazonwebservices.svg";
 import Azure from "../public/skills/azure.png";
 import GCP from "../public/skills/googlecloud.svg";
 
-const CATEGORY_COLORS = {
-  "Languages":      "#3e37ff",
-  "Frontend":       "#7c3aed",
-  "Frameworks":     "#0ea5e9",
-  "Databases":      "#059669",
-  "Tools":          "#d97706",
-  "Cloud & DevOps": "#db2777",
-};
-
 const skillCategories = [
+  {
+    title: "Infrastructure & Operations",
+    skills: [
+      { name: "Linux" },
+      { name: "Ubuntu Server" },
+      { name: "HestiaCP" },
+      { name: "DNS" },
+      { name: "Firewalls" },
+      { name: "Backups" },
+      { name: "AWS",          image: AWS },
+      { name: "Azure",        image: Azure },
+      { name: "Google Cloud", image: GCP },
+      { name: "Vercel",       image: Vercel },
+    ],
+  },
+  {
+    title: "Containers & Orchestration",
+    skills: [
+      { name: "Docker" },
+      { name: "Kubernetes" },
+      { name: "Terraform" },
+      { name: "Jenkins" },
+      { name: "Kafka" },
+      { name: "Keycloak" },
+    ],
+  },
   {
     title: "Languages",
     skills: [
-      { name: "JavaScript",  image: Javascript },
-      { name: "TypeScript",  image: TypeScript },
-      { name: "Python",      image: Python },
-      { name: "Java",        image: Java },
-      { name: "C#",          image: CSharp },
-      { name: "Go",          image: Go },
-      { name: "SQL",         image: SQL },
-      { name: "Lua",         image: null },
-      { name: "Liquid",      image: Shopify },
+      { name: "Go",         image: Go },
+      { name: "TypeScript", image: TypeScript },
+      { name: "JavaScript", image: Javascript },
+      { name: "Python",     image: Python },
+      { name: "C++" },
+      { name: "C#",         image: CSharp },
+      { name: "Java",       image: Java },
+      { name: "PHP" },
+      { name: "SQL",        image: SQL },
+      { name: "Lua" },
+      { name: "Liquid" },
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      { name: "Node.js",        image: Node },
+      { name: "Express",        image: Express },
+      { name: "Apollo GraphQL" },
+      { name: "ASP.NET",        image: AspNet },
+      { name: "Convex" },
+      { name: "REST APIs",      image: RestAPI },
+    ],
+  },
+  {
+    title: "Data",
+    skills: [
+      { name: "PostgreSQL", image: PostgreSQL },
+      { name: "MongoDB" },
+      { name: "MySQL" },
+      { name: "SQLite",     image: SQLite },
+    ],
+  },
+  {
+    title: "Embedded",
+    skills: [
+      { name: "Arduino" },
+      { name: "C for microcontrollers" },
+      { name: "I2C" },
+      { name: "SPI" },
+      { name: "UART" },
     ],
   },
   {
     title: "Frontend",
     skills: [
-      { name: "HTML",         image: Html },
-      { name: "CSS",          image: Css },
       { name: "React",        image: ReactImg },
       { name: "Next.js",      image: NextJS },
+      { name: "Angular" },
       { name: "Tailwind CSS", image: Tailwind },
+      { name: "Shopify",      image: Shopify },
     ],
   },
   {
-    title: "Frameworks",
+    title: "Tooling",
     skills: [
-      { name: "Node.js",          image: Node },
-      { name: "Express.js",       image: Express },
-      { name: "ASP.NET",          image: AspNet },
-      { name: "Hydrogen / Remix", image: Shopify },
-    ],
-  },
-  {
-    title: "Databases",
-    skills: [
-      { name: "PostgreSQL", image: PostgreSQL },
-      { name: "SQLite",     image: SQLite },
-      { name: "LuaSQL",     image: null },
-      { name: "MySQL",      image: null },
-    ],
-  },
-  {
-    title: "Tools",
-    skills: [
-      { name: "Git",       image: Git },
-      { name: "GitHub",    image: Github },
-      { name: "REST APIs", image: RestAPI },
-      { name: "Vercel",    image: Vercel },
-      { name: "Neovim",    image: Neovim },
-    ],
-  },
-  {
-    title: "Cloud & DevOps",
-    skills: [
-      { name: "AWS",          image: AWS },
-      { name: "Azure",        image: Azure },
-      { name: "Google Cloud", image: GCP },
+      { name: "Git",            image: Git },
+      { name: "GitHub Actions", image: Github },
+      { name: "Neovim",         image: Neovim },
+      { name: "Bun" },
+      { name: "Turborepo" },
+      { name: "Nix" },
     ],
   },
 ];
@@ -135,7 +157,7 @@ const Skills = () => {
 
         <div className="grid md:grid-cols-2 gap-5 mt-2">
           {skillCategories.map((category) => {
-            const accent = CATEGORY_COLORS[category.title] || "#5651e5";
+            const accent = "#5651e5";
             return (
               <div
                 key={category.title}
