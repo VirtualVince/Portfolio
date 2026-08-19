@@ -1,30 +1,21 @@
 import Image from "next/image";
 import React from "react";
 
-// Local brand assets
+// Local brand assets. Only multi-colour marks belong here — a single-colour
+// glyph has no fill of its own and paints black in both themes, so those come
+// from react-icons below and get tinted with the category accent instead.
 import Javascript from "../public/skills/javascript.png";
 import ReactImg from "../public/skills/react.png";
 import Tailwind from "../public/skills/tailwind.png";
-import NextJS from "../public/skills/nextjs1.png";
 import Node from "../public/skills/node.png";
-import TypeScript from "../public/skills/typescript.svg";
-import Python from "../public/skills/python.svg";
 import SQL from "../public/skills/sql.png";
 import Java from "../public/skills/java.png";
 import CSharp from "../public/skills/csharp.png";
-import Go from "../public/skills/go.svg";
 import AspNet from "../public/skills/aspdotnet.png";
 import Express from "../public/skills/expressjs.png";
 import Shopify from "../public/skills/shopify.png";
-import PostgreSQL from "../public/skills/postgresql.svg";
-import SQLite from "../public/skills/sqlite.svg";
 import RestAPI from "../public/skills/restapi.png";
-import Neovim from "../public/skills/neovim.svg";
-import Git from "../public/skills/git.svg";
-import Vercel from "../public/skills/vercel.svg";
-import AWS from "../public/skills/amazonwebservices.svg";
 import Azure from "../public/skills/azure.png";
-import GCP from "../public/skills/googlecloud.svg";
 
 // Everything else comes from Simple Icons, already bundled inside react-icons.
 // No extra dependency, no files to download.
@@ -32,7 +23,8 @@ import {
   SiLinux, SiUbuntu, SiDocker, SiKubernetes, SiTerraform, SiJenkins,
   SiApachekafka, SiCplusplus, SiPhp, SiLua, SiApollographql, SiMongodb,
   SiMysql, SiArduino, SiC, SiAngular, SiGithubactions, SiBun, SiTurborepo,
-  SiNixos,
+  SiNixos, SiTypescript, SiPython, SiGo, SiPostgresql, SiSqlite, SiNeovim,
+  SiGit, SiVercel, SiAmazonaws, SiGooglecloud, SiNextdotjs,
 } from "react-icons/si";
 
 // Generic marks for things with no brand logo: protocols, services and concepts.
@@ -66,10 +58,10 @@ const skillCategories = [
       { name: "DNS",       Icon: MdDns },
       { name: "Firewalls", Icon: TbShieldLock },
       { name: "Backups",   Icon: MdBackup },
-      { name: "AWS",           image: AWS },
+      { name: "AWS",           Icon: SiAmazonaws },
       { name: "Azure",         image: Azure },
-      { name: "Google Cloud",  image: GCP },
-      { name: "Vercel",        image: Vercel },
+      { name: "Google Cloud",  Icon: SiGooglecloud },
+      { name: "Vercel",        Icon: SiVercel },
     ],
   },
   {
@@ -86,10 +78,10 @@ const skillCategories = [
   {
     title: "Languages",
     skills: [
-      { name: "Go",         image: Go },
-      { name: "TypeScript", image: TypeScript },
+      { name: "Go",         Icon: SiGo },
+      { name: "TypeScript", Icon: SiTypescript },
       { name: "JavaScript", image: Javascript },
-      { name: "Python",     image: Python },
+      { name: "Python",     Icon: SiPython },
       { name: "C++",        Icon: SiCplusplus },
       { name: "C#",         image: CSharp },
       { name: "Java",       image: Java },
@@ -113,10 +105,10 @@ const skillCategories = [
   {
     title: "Data",
     skills: [
-      { name: "PostgreSQL", image: PostgreSQL },
+      { name: "PostgreSQL", Icon: SiPostgresql },
       { name: "MongoDB",    Icon: SiMongodb },
       { name: "MySQL",      Icon: SiMysql },
-      { name: "SQLite",     image: SQLite },
+      { name: "SQLite",     Icon: SiSqlite },
     ],
   },
   {
@@ -133,7 +125,7 @@ const skillCategories = [
     title: "Frontend",
     skills: [
       { name: "React",        image: ReactImg },
-      { name: "Next.js",      image: NextJS },
+      { name: "Next.js",      Icon: SiNextdotjs },
       { name: "Angular",      Icon: SiAngular },
       { name: "Tailwind CSS", image: Tailwind },
       { name: "Shopify",      image: Shopify },
@@ -142,9 +134,9 @@ const skillCategories = [
   {
     title: "Tooling",
     skills: [
-      { name: "Git",            image: Git },
+      { name: "Git",            Icon: SiGit },
       { name: "GitHub Actions", Icon: SiGithubactions },
-      { name: "Neovim",         image: Neovim },
+      { name: "Neovim",         Icon: SiNeovim },
       { name: "Bun",            Icon: SiBun },
       { name: "Turborepo",      Icon: SiTurborepo },
       { name: "Nix",            Icon: SiNixos },
