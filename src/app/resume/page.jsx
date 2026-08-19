@@ -1,6 +1,13 @@
 import React from "react";
-import Head from "next/head";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+
+// Icons are inherited from the root layout's metadata, so this route no longer
+// declares its own. It previously pointed at /favicon.png, which does not exist.
+export const metadata = {
+  title: "Vincente Sequeira | Resume",
+  description:
+    "Vincente Sequeira, software engineer working on backend services and the Linux infrastructure they run on.",
+};
 
 // Keep this file in sync with ~/job/resume/master.md, which generates the PDF.
 // Everything below is data. Edit the arrays, not the markup.
@@ -199,15 +206,6 @@ const LinkedItem = ({ item }) => (
 const Resume = () => {
   return (
     <>
-      <Head>
-        <title>Vincente Sequeira | Resume</title>
-        <meta
-          name="description"
-          content="Vincente Sequeira, software engineer working on backend services and the Linux infrastructure they run on."
-        />
-        <link rel="icon" href="/favicon.png" />
-      </Head>
-
       <div className="max-w-[940px] mx-auto p-2 pt-[120px] text-black dark:text-white">
         <h2 className="text-center">Resume</h2>
 

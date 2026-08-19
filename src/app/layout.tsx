@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "../../components/ThemeProvider";
+import Navbar from "../../components/Navbar";
 import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 // Runs before first paint so the theme class is on <html> before React hydrates,
-// which avoids a flash of the wrong theme. Kept identical to src/pages/_document.jsx.
+// which avoids a flash of the wrong theme.
 const themeScript = `
 try {
   var stored = localStorage.getItem('theme');
@@ -34,7 +35,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        {/* Navbar lives here rather than in a page so every route gets the same
+            one. /resume used to be a Pages Router route and pulled its own copy
+            in from _app.jsx. */}
+        <ThemeProvider>
+          <Navbar />
+          {children}
+        </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
