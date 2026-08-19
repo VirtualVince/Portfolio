@@ -1,21 +1,14 @@
 import Image from "next/image";
 import React from "react";
 
-// Local brand assets. Only multi-colour marks belong here — a single-colour
-// glyph has no fill of its own and paints black in both themes, so those come
-// from react-icons below and get tinted with the category accent instead.
+// Local brand assets. A file only belongs here if its logo is multi-colour AND
+// its background is transparent. Anything else is better off as a react-icons
+// glyph below: a single-colour SVG has no fill and paints black, and a PNG with
+// no alpha shows its baked-in white background as a light tile on a dark chip.
 import Javascript from "../public/skills/javascript.png";
 import ReactImg from "../public/skills/react.png";
 import Tailwind from "../public/skills/tailwind.png";
 import Node from "../public/skills/node.png";
-import SQL from "../public/skills/sql.png";
-import Java from "../public/skills/java.png";
-import CSharp from "../public/skills/csharp.png";
-import AspNet from "../public/skills/aspdotnet.png";
-import Express from "../public/skills/expressjs.png";
-import Shopify from "../public/skills/shopify.png";
-import RestAPI from "../public/skills/restapi.png";
-import Azure from "../public/skills/azure.png";
 
 // Everything else comes from Simple Icons, already bundled inside react-icons.
 // No extra dependency, no files to download.
@@ -24,14 +17,15 @@ import {
   SiApachekafka, SiCplusplus, SiPhp, SiLua, SiApollographql, SiMongodb,
   SiMysql, SiArduino, SiC, SiAngular, SiGithubactions, SiBun, SiTurborepo,
   SiNixos, SiTypescript, SiPython, SiGo, SiPostgresql, SiSqlite, SiNeovim,
-  SiGit, SiVercel, SiAmazonaws, SiGooglecloud, SiNextdotjs,
+  SiGit, SiVercel, SiAmazonaws, SiGooglecloud, SiNextdotjs, SiMicrosoftazure,
+  SiCsharp, SiOpenjdk, SiExpress, SiDotnet, SiShopify,
 } from "react-icons/si";
 
 // Generic marks for things with no brand logo: protocols, services and concepts.
 import { MdDns, MdBackup } from "react-icons/md";
 import {
   TbServerCog, TbShieldLock, TbKey, TbDatabase, TbCpu, TbPlugConnected,
-  TbArrowsExchange,
+  TbArrowsExchange, TbSql, TbApi,
 } from "react-icons/tb";
 
 // One accent per category, carried by the left border and the heading.
@@ -59,7 +53,7 @@ const skillCategories = [
       { name: "Firewalls", Icon: TbShieldLock },
       { name: "Backups",   Icon: MdBackup },
       { name: "AWS",           Icon: SiAmazonaws },
-      { name: "Azure",         image: Azure },
+      { name: "Azure",         Icon: SiMicrosoftazure },
       { name: "Google Cloud",  Icon: SiGooglecloud },
       { name: "Vercel",        Icon: SiVercel },
     ],
@@ -83,23 +77,23 @@ const skillCategories = [
       { name: "JavaScript", image: Javascript },
       { name: "Python",     Icon: SiPython },
       { name: "C++",        Icon: SiCplusplus },
-      { name: "C#",         image: CSharp },
-      { name: "Java",       image: Java },
+      { name: "C#",         Icon: SiCsharp },
+      { name: "Java",       Icon: SiOpenjdk },
       { name: "PHP",        Icon: SiPhp },
-      { name: "SQL",        image: SQL },
+      { name: "SQL",        Icon: TbSql },
       { name: "Lua",        Icon: SiLua },
-      { name: "Liquid",     image: Shopify },
+      { name: "Liquid",     Icon: SiShopify },
     ],
   },
   {
     title: "Backend",
     skills: [
       { name: "Node.js",        image: Node },
-      { name: "Express",        image: Express },
+      { name: "Express",        Icon: SiExpress },
       { name: "Apollo GraphQL", Icon: SiApollographql },
-      { name: "ASP.NET",        image: AspNet },
+      { name: "ASP.NET",        Icon: SiDotnet },
       { name: "Convex",    Icon: TbDatabase },
-      { name: "REST APIs",      image: RestAPI },
+      { name: "REST APIs",      Icon: TbApi },
     ],
   },
   {
@@ -128,7 +122,7 @@ const skillCategories = [
       { name: "Next.js",      Icon: SiNextdotjs },
       { name: "Angular",      Icon: SiAngular },
       { name: "Tailwind CSS", image: Tailwind },
-      { name: "Shopify",      image: Shopify },
+      { name: "Shopify",      Icon: SiShopify },
     ],
   },
   {
